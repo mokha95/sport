@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import isEmailValidator from "validator/lib/isEmail";
 
 import { userService, alertService } from 'services';
+// composant AddEdit est utilisé à la fois pour ajouter et modifier des utilisateurs, il contient un formulaire construit avec la bibliothèque React Hook Form et est utilisé par la page d'ajout d'utilisateur et la page de modification d'utilisateur .
 
 export { AddEdit };
 
@@ -13,6 +14,7 @@ function AddEdit(props) {
     const user = props?.user;
     const router = useRouter();
 
+    // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
     // form validation rules 
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
@@ -44,8 +46,11 @@ function AddEdit(props) {
     }
 
     // get functions to build form with useForm() hook
+    // La useForm()fonction hook renvoie un objet avec des méthodes pour travailler avec un formulaire, notamment l'enregistrement des entrées, la gestion de la soumission du formulaire, la réinitialisation du formulaire, l'accès à l'état du formulaire, l'affichage des erreurs et plus encore
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
+
+    // La onSubmitfonction est appelée lorsque le formulaire est soumis et valide, et crée ou met à jour un utilisateur en fonction du mode dans lequel il se trouve.
 
     async function onSubmit(data) {
         alertService.clear();

@@ -25,8 +25,8 @@ async function initialize() {
 
     // init models and add them to the exported db object
     db.User = userModel(sequelize);
-    db.Article =articleModel(sequelize);
-    db.Event =eventModel(sequelize);
+    db.Article = articleModel(sequelize);
+    db.Event = eventModel(sequelize);
     // sync all models with database synchroniser les tables avec la base de donnée a chaque connexion
     await sequelize.sync({ alter: true });
 
@@ -73,7 +73,7 @@ function articleModel(sequelize){
 
 // model Evenement
 
-function eventModel(){
+function eventModel(sequelize ){
     const attributes ={
         title: {type: DataTypes.STRING, allowNull: false},
         description: {type:DataTypes.TEXT, allowNull: false},

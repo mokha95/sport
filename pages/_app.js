@@ -68,8 +68,8 @@ function App({ Component, pageProps }) {
                 {authorized &&
                     <Component {...pageProps} />
                 }
-                <Footer />
             </div>
+                <Footer />
         </>
     );
 }

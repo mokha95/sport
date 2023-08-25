@@ -14,6 +14,9 @@ function Index() {
         <p>
           <Link href="/articles">Manage Articles</Link>
         </p>
+        <p>
+          <Link href="/events">Manage Events</Link>
+        </p>
       </div>
     </div>
   );

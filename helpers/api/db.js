@@ -23,7 +23,7 @@ async function initialize() {
     // connect to db
     const sequelize = new Sequelize(database, user, password, { dialect: 'mysql' });
 
-    // init models and add them to the exported db object
+    // initialise les modèles  ajoute à l'objet de base de données
     db.User = userModel(sequelize);
     db.Article = articleModel(sequelize);
     db.Event = eventModel(sequelize);

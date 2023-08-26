@@ -45,7 +45,7 @@ function Index() {
 
                             <td > <p> {article.content}</p></td>
                            
-                            <td>{article.img}</td>
+                            <td>{article.image}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link href={`/articles/edit/${article.id}`} className="btn btn-sm btn-primary me-1">Modifier</Link>
                                 <button onClick={() => deleteArticle(article.id)} className="btn btn-sm btn-danger btn-delete-user" style={{ width: '60px' }} disabled={article.isDeleting}>

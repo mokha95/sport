@@ -9,9 +9,16 @@ export const articlesRepo = {
     getById,
     create,
     update,
-    delete: _delete
+    delete: _delete,
+    getVarious,
 };
 
+async function getVarious() {
+    return await db.Article.findAll({
+      order: [["createdAt", "DESC"]],
+      limit: 3,
+    });
+  }
 
 // requete avec des methode sequelize sur le model article
 async function getAll() {

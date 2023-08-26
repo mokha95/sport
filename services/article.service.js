@@ -14,9 +14,13 @@ export const articleService = {
     getAll,
     getById,
     update,
-    delete: _delete
+    delete: _delete,
+    getVarious,
 };
 
+async function getVarious() {
+    return await fetchWrapper.get(`${baseUrl}/various`);
+  }
 
 
 async function register(article) {

@@ -11,11 +11,12 @@ function Index() {
     const [events, setEvents] = useState(null);
 // recupere tout les utilisateurs
     useEffect(() => {
-        eventService.getAll().then(x => setEvents(x));
+        eventService.getAll().then((x) => setEvents(x));
+        // console.log(events[0]);
     }, []);
 
     function deleteEvent(id) {
-        setEvents(events.map(x => {
+        setEvents(events.map((x )=> {
             if (x.id === id) { x.isDeleting = true; }
             return x;
         }));
@@ -31,9 +32,10 @@ function Index() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th style={{ width: '30%' }}>Titre</th>
-                        <th style={{ width: '30%' }}>Contenu</th>
-                        <th style={{ width: '30%' }}>Image</th>
+                        <th style={{ width: '22.5%' }}>Titre</th>
+                        <th style={{ width: '22.5%' }}>Contenu</th>
+                        <th style={{ width: '22.5%' }}>Image</th>
+                        <th style={{ width: '22.5%' }}>Lieu, horaire</th>
                         <th style={{ width: '10%' }}></th>
                     </tr>
                 </thead>
@@ -45,7 +47,8 @@ function Index() {
 
                             <td > <p> {event.description}</p></td>
                            
-                            <td>{event.img}</td>
+                            <td>{event.image}</td>
+                            <td>{event.rdv}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link href={`/events/edit/${event.id}`} className="btn btn-sm btn-primary me-1">Modifier</Link>
                                 <button onClick={() => deleteEvent(event.id)} className="btn btn-sm btn-danger btn-delete-user" style={{ width: '60px' }} disabled={event.isDeleting}>

@@ -9,13 +9,16 @@ function Index() {
       <div className="container">
         <p>You&apos;re logged in with Next.js & JWT!!</p>
         <p>
-          <Link href="/users">Manage Users</Link>
+          <Link href="/users">Gérer les  utilisateurs</Link>
         </p>
         <p>
-          <Link href="/articles">Manage Articles</Link>
+          <Link href="/articles">Gérer les Articles</Link>
         </p>
         <p>
-          <Link href="/events">Manage Events</Link>
+          <Link href="/events">Gérer les evenements</Link>
+        </p>
+        <p>
+          <Link href="/horaires">Gérer les horaires</Link>
         </p>
       </div>
     </div>

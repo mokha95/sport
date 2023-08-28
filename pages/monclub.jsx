@@ -1,4 +1,5 @@
 import React from "react";
+import { SectionEvent } from "components/events";
 
 const monclub = () => {
   return (
@@ -68,6 +69,9 @@ const monclub = () => {
             <br />
             Avec enthousiasme, L&apos;équipe Mpower Gym.{" "}
           </p>
+
+          <SectionEvent />
+
         </div>
         <br />
         <br />

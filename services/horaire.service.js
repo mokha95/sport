@@ -1,29 +1,21 @@
-
 import getConfig from 'next/config';
-
 
 import { fetchWrapper } from 'helpers';
 
-// methode fetch pour le crud  des evenement
+// horaire.service declare les routes qu on va utiliser dans l 'api
+// methode fetch pour le crud  des articles
 const { publicRuntimeConfig } = getConfig();
-const baseUrl = `${publicRuntimeConfig.apiUrl}/events`;
+const baseUrl = `${publicRuntimeConfig.apiUrl}/horaires`;
 
-
-export const eventService = {
+export const horaireService = {
     register,
     getAll,
     getById,
     update,
     delete: _delete,
-    getVarious
 };
-
-async function getVarious() {
-    return await fetchWrapper.get(`${baseUrl}/various`);
-  }
-
-async function register(event) {
-    await fetchWrapper.post(`${baseUrl}/register`, event);
+async function register(horaire) {
+    await fetchWrapper.post(`${baseUrl}/register`, horaire);
 }
 
 async function getAll() {
@@ -43,6 +35,5 @@ async function update(id, params) {
 // prefixed with underscored because delete is a reserved word in javascript
 async function _delete(id) {
     await fetchWrapper.delete(`${baseUrl}/${id}`);
-
  
 }

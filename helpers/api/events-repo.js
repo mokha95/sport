@@ -9,9 +9,16 @@ export const eventsRepo = {
     getById,
     create,
     update,
-    delete: _delete
+    delete: _delete,
+    getVarious
 };
 
+async function getVarious() {
+    return await db.Event.findAll({
+      order: [["createdAt", "DESC"]],
+      limit: 3,
+    });
+  }
 
 // requete avec des methode sequelize sur le model event
 async function getAll() {

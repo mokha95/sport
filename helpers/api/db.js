@@ -27,6 +27,7 @@ async function initialize() {
     db.User = userModel(sequelize);
     db.Article = articleModel(sequelize);
     db.Event = eventModel(sequelize);
+    db.Horaire = horaireModel(sequelize);
     // sync all models with database synchroniser les tables avec la base de donnée a chaque connexion
     await sequelize.sync({ alter: true });
 
@@ -83,4 +84,20 @@ function eventModel(sequelize ){
 
     }
     return sequelize.define('Event', attributes);
+}
+
+
+// modele horaires
+
+function horaireModel(sequelize){
+    const attributes ={
+        jour: {type: DataTypes.STRING, allowNull: false},
+        debut_matin: {type: DataTypes.STRING, allowNull: false},
+        fin_matin: {type: DataTypes.STRING, allowNull: false},
+        debut_apresmidi: {type: DataTypes.STRING, allowNull: false},
+        fin_apresmidi: {type: DataTypes.STRING, allowNull: false},
+        fermeture_matin: {type: DataTypes.TINYINT, allowNull: false},
+        fermeture_apresmidi: {type: DataTypes.TINYINT, allowNull: false},
+    };
+    return sequelize.define('Horaire', attributes);
 }

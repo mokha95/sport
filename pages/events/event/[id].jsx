@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { Layout, ViewArticle } from "components/articles";
+import { Layout, ViewEvent } from "components/events";
 import { Spinner } from "components";
-import { articleService, alertService } from "services";
+import { eventService, alertService } from "services";
 
-export default Article;
+export default Event;
 
-function Article() {
+function Event() {
   const router = useRouter();
-  const [article, setArticle] = useState(null);
+  const [event, setEvent] = useState(null);
 
   // recupere l id dans le query du chemin
   useEffect(() => {
@@ -17,16 +17,16 @@ function Article() {
     if (!id) return;
 
     // fetch article and set default form values if in edit mode
-    articleService
+    eventService
       .getById(id)
-      .then((x) => setArticle(x))
+      .then((x) => setEvent(x))
       .catch(alertService.error);
   }, [router]);
   return (
     <Layout>
 
-      {/* remplacer le addeditarticle et creer un composant l'article en plein pages */}
-      {article ? <ViewArticle article={article} /> : <Spinner />}
+      {/* remplacer le addeditevent et creer un composant l'article en plein pages */}
+      {event ? <ViewEvent event={event} /> : <Spinner />}
     </Layout>
   );
 }

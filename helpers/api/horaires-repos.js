@@ -36,7 +36,7 @@ async function update(id, params) {
     const horaire = await db.Horaire.findByPk(id);
 
     // validate
-    if (!horaire) throw 'L Evenement n&apos;existe pas';
+    if (!horaire) throw 'L horaire n&apos;existe pas';
 
     // copy params properties to user
     Object.assign(horaire, params);

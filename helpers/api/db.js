@@ -3,7 +3,7 @@ import mysql from 'mysql2/promise';
 import { Sequelize, DataTypes } from 'sequelize';
 
 // orm permet de creer une correspondance entre un modele objet et un modele relationnel de base de donnée 
-
+// Sequelize ORM (Object Relational Mapper) est utilisé pour connecter, interroger et gérer les données dans la base de données MySQL. Sequelize prend également en charge la synchronisation des modèles pour générer automatiquement des tables et des colonnes de base de données basées sur des modèles définis dans le code.
 
 const { serverRuntimeConfig } = getConfig();
 
@@ -28,7 +28,7 @@ async function initialize() {
     db.Article = articleModel(sequelize);
     db.Event = eventModel(sequelize);
     db.Horaire = horaireModel(sequelize);
-    // sync all models with database synchroniser les tables avec la base de donnée a chaque connexion
+    // synchroniser les tables avec la base de donnée a chaque connexion  vérifie quel est l'état actuel de la table dans la base de données puis effectue les modifications nécessaires dans la table pour qu'elle corresponde au modèle.
     await sequelize.sync({ alter: true });
 
     db.initialized = true;

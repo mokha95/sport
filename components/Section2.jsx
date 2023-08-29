@@ -59,7 +59,11 @@ const Section2 = () => {
                 <p className="lh-lg">
                   Une salle de sport et de remise en forme se définit aussi pour
                   son équipement et l&apos;espace dans lequel on travaille ses
-                  muscles. Le complexe sportif Mpower Gym met à votre
+                  muscles.
+
+                  <br />
+                
+                   Le complexe sportif Mpower Gym met à votre
                   disposition des équipements de sports dernier cri qui vont
                   booster votre motivation et qui vont vous faire aimer faire du
                   sport.
@@ -70,7 +74,7 @@ const Section2 = () => {
               <div className="partieDroite ">
                 <img
                   className="img-fluid"
-                  src="img/sportif-Corde1.jpg"
+                  src="img/halteres.png"
                   alt="sportif qui s'entraine"
                 />
               </div>
@@ -98,7 +102,7 @@ const Section2 = () => {
               <div className="partieDroite">
                 <img
                   className="img-fluid"
-                  src="img/halteres.png"
+                  src="img/sportif-5-grand-format.jpg"
                   alt="sportif qui s'entraine"
                 />
               </div>

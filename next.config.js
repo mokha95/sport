@@ -15,7 +15,10 @@ const nextConfig = {
       apiUrl: process.env.NODE_ENV === 'development'
           ? 'http://localhost:3000/api' // development api
           : 'http://localhost:3000/api' // production api
-  }
+  },
+  images: {
+    path: "/images",
+  },
 }
 
 module.exports = nextConfig

@@ -92,12 +92,12 @@ function eventModel(sequelize ){
 function horaireModel(sequelize){
     const attributes ={
         jour: {type: DataTypes.STRING, allowNull: false},
-        debut_matin: {type: DataTypes.STRING, allowNull: false},
-        fin_matin: {type: DataTypes.STRING, allowNull: false},
-        debut_apresmidi: {type: DataTypes.STRING, allowNull: false},
-        fin_apresmidi: {type: DataTypes.STRING, allowNull: false},
-        fermeture_matin: {type: DataTypes.TINYINT, allowNull: false},
-        fermeture_apresmidi: {type: DataTypes.TINYINT, allowNull: false},
+        debut_matin: {type: DataTypes.STRING, allowNull: true},
+        fin_matin: {type: DataTypes.STRING, allowNull: true},
+        debut_apresmidi: {type: DataTypes.STRING, allowNull: true},
+        fin_apresmidi: {type: DataTypes.STRING, allowNull: true},
+        fermeture_matin: {type: DataTypes.TINYINT, allowNull: true},
+        fermeture_apresmidi: {type: DataTypes.TINYINT, allowNull: true},
     };
     return sequelize.define('Horaire', attributes);
 }

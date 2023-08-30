@@ -16,17 +16,27 @@ function Event() {
     const { id } = router.query;
     if (!id) return;
 
-    // fetch article and set default form values if in edit mode
+    // fetch event and set default form values if in edit mode
     eventService
       .getById(id)
       .then((x) => setEvent(x))
       .catch(alertService.error);
   }, [router]);
-  return (
+  {if (event){
+    return (
+      <Layout>
+    <>
+    <h1>{event.title}</h1>
+            <p>{event.description}</p>
+            <img className="img-fluid" src={`img/${event.image}`}  alt={`${event.title}`}  />  
+            <p>{event.rdv}</p>
+    </>
+</Layout>)
+  } else {
+    return(
     <Layout>
-
-      {/* remplacer le addeditevent et creer un composant l'article en plein pages */}
-      {event ? <ViewEvent event={event} /> : <Spinner />}
+    <Spinner/>
     </Layout>
-  );
+    )
+  }}
 }

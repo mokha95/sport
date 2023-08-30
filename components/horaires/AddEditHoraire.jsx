@@ -20,18 +20,7 @@ function AddEditHoraire(props) {
     const validationSchema = Yup.object().shape({
         jour: Yup.string()
          .required('Un contenu est requis'),
-         debut_matin: Yup.string()
-         .required('Un contenu est requis'),
-         fin_matin: Yup.string()
-         .required('Un contenu est requis'),
-         debut_apresmidi: Yup.string()
-         .required('Un contenu est requis'),
-          fin_apresmidi: Yup.string()
-         .required('Un contenu est requis'),
-          fermeture_matin: Yup.string()
-         .required('Un contenu est requis'),
-          fermeture_apresmidi: Yup.string()
-         .required('Un contenu est requis'),
+     
  
         
      });
@@ -79,59 +68,66 @@ function AddEditHoraire(props) {
                     <input name="Jour" type="text" {...register('jour')} className={`form-control ${errors.jour ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.jour?.message}</div>
                 </div>
+                </div>
+                <div className="row">
+
                 <div className="mb-3 col">
                     <label className="form-label">debut matin</label>
-                    <textarea
+                    <input
                     name="debut_matin"
                     {...register("debut_matin")}
                     className={`form-control ${errors.debut_matin ? "is-invalid" : ""}`}
-                    ></textarea>
+                    />
                     <div className="invalid-feedback">{errors.debut_matin?.message}</div>
                 </div>
-            </div>
-            <div className="row">
                 <div className="mb-3 col">
                     <label className="form-label">fin matin</label>
                     <input name="fin_matin" type="text" {...register('fin_matin')} className={`form-control ${errors.fin_matin ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.fin_matin?.message}</div>
                 </div>
-            </div>
+                </div>
+           
+            <div className="row">
+            
             <div className="mb-3 col">
                     <label className="form-label">debut apres midi</label>
                     <input
                     name="debut_apresmidi" type='text'
                     {...register("debut_apresmidi")}
                     className={`form-control ${errors.debut_apresmidi ? "is-invalid" : ""}`}
-                    ></input>
+                    />
                     <div className="invalid-feedback">{errors.debut_apresmidi?.message}</div>
                 </div>
             <div className="mb-3 col">
                     <label className="form-label">fin apres midi</label>
-                    <textarea
+                    <input
                     name="fin_apresmidi"
                     {...register("fin_apresmidi")}
                     className={`form-control ${errors.fin_apresmidi ? "is-invalid" : ""}`}
-                    ></textarea>
+                    />
                     <div className="invalid-feedback">{errors.fin_apresmidi?.message}</div>
                 </div>
+           </div>   
+           <div className="row"> 
             <div className="mb-3 col">
                     <label className="form-label">fermeture matin</label>
-                    <textarea
+                    <input
                     name="fermeture_matin"
                     {...register("fermeture_matin")}
                     className={`form-control ${errors.fermeture_matin ? "is-invalid" : ""}`}
-                    ></textarea>
+                    />
                     <div className="invalid-feedback">{errors.fermeture_matin?.message}</div>
                 </div>
             <div className="mb-3 col">
-                    <label className="form-label">apres midi</label>
-                    <textarea
+                    <label className="form-label"> fermeture apres midi</label>
+                    <input
                     name="fermeture_apresmidi"
                     {...register("fermeture_apresmidi")}
                     className={`form-control ${errors.apresmidi ? "is-invalid" : ""}`}
-                    ></textarea>
+                    />
                     <div className="invalid-feedback">{errors.apresmidi?.message}</div>
                 </div>
+       </div>
             <div className="mb-3">
                 <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
                     {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}

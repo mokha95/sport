@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "styles/footer.module.css";
+import { SectionHoraire } from "./horaires";
 
 const Footer = () => {
   return (
@@ -32,15 +33,7 @@ const Footer = () => {
           <div className="col-lg-4">
             <h4>Horaires</h4>
             <div className={styles.trait}></div>
-            <ul className={`lh-lg ${styles.liste}`}>
-              <li> Lundi - 06h00 - 23h00</li>
-              <li> Mardi - 06h00 - 23h00</li>
-              <li> Mercredi - 06h00 - 23h00</li>
-              <li>Jeudi - 06h00 - 23h00</li>
-              <li>Vendredi - 06h00 - 23h00</li>
-              <li>Samedi - 06h00 - 23h00</li>
-              <li>Dimanche - 06h00 - 23h00</li>
-            </ul>
+          <SectionHoraire/>
           </div>
         </div>
       </div>

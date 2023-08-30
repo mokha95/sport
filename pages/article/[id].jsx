@@ -22,11 +22,23 @@ function Article() {
       .then((x) => setArticle(x))
       .catch(alertService.error);
   }, [router]);
-  return (
-    <Layout>
+ 
 
       {/* remplacer le addeditarticle et creer un composant l'article en plein pages */}
-      {article ? <ViewArticle article={article} /> : <Spinner />}
-    </Layout>
-  );
+      {if (article){
+        return (
+          <Layout>
+        <>
+        <h1>{article.title}</h1>
+            <p>{article.content}</p>
+            <img className="img-fluid" src={`public/img/${article.image}`}  alt="repas "  />  
+        </>
+    </Layout>)
+      } else {
+        return(
+        <Layout>
+        <Spinner/>
+        </Layout>
+        )
+      }}
 }

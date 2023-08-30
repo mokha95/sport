@@ -6,7 +6,8 @@ function ViewArticle(props){
         <>
             <h1>{article.title}</h1>
             <p>{article.content}</p>
-            <img className="img-fluid" src={`img/${article.image}`}  alt="repas "  />            
+            <img className="img-fluid" src={`/img/${article.image}`}  alt="repas " width={468} height={312}/>
+           
         </>
     )
 }

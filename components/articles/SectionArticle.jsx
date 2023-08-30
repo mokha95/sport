@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "styles/article.module.css";
 
+
 export { SectionArticle };
 
 function SectionArticle() {
@@ -37,7 +38,7 @@ function SectionArticle() {
                       <div className={styles.trait2}></div>
                       <Link
                         className={styles.liensArticle}
-                        href={`/articles/article/${article.id}`}
+                        href={`/article/${article.id}`}
                       >
                         Lire la suite
                       </Link>

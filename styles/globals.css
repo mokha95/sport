@@ -73,6 +73,14 @@ main p {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 992px){
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    align-items: start !important;
+   
+}
+}
+
 @media screen and (max-width: 1000px) {
   .navigationBoutons {
     margin-bottom: 10px;

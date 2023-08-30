@@ -35,7 +35,10 @@ const Section2 = () => {
                   qui sommeille en vous. Rejoignez-nous dans notre salle de
                   sport, où les rêves deviennent des réalités et où la
                   persévérance construit des destins.
+                  <br /><br />
+                  Mpower Gym ne se limite pas uniquement à l&apos;effort physique. L&apos;espace de récupération est conçu pour favoriser la détente après l&apos;entraînement, avec des saunas et des espaces de relaxation. Des séances de méditation et de yoga sont également organisées pour aider les membres à relâcher les tensions et à cultiver la tranquillité d&apos;esprit.
                 </p>
+
               </div>
             </div>
             <div className="col-lg-6">
@@ -67,6 +70,8 @@ const Section2 = () => {
                   disposition des équipements de sports dernier cri qui vont
                   booster votre motivation et qui vont vous faire aimer faire du
                   sport.
+                  <br />
+                  Les tapis roulants dotés de systèmes interactifs vous immergent dans des parcours virtuels, vous transportant dans des environnements inspirants tout en mesurant votre performance. Les machines de musculation de dernière génération sont ergonomiques et ajustables, permettant un ciblage précis des groupes musculaires.
                 </p>
               </div>
             </div>
@@ -95,6 +100,8 @@ const Section2 = () => {
                   votre esprit ! Nous faisons de chacune de nos séances
                   sportives un moment d’échanges, de bienveillance et de
                   motivation pour donner le meilleur de nous et de vous !
+                  <br />
+                  Cet espace professionnel constitue une source d&apos;informations et de conseils complets pour les membres, favorisant ainsi leur engagement et leur réussite à long terme.
                 </p>
               </div>
             </div>

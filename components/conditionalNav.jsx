@@ -59,8 +59,8 @@ const ConditionalNav = () => {
     return (
       <>
         <ul className="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <NavLink href="/" className="nav-link ">
+          <li className="nav-item " >
+            <NavLink href="/" className={`nav-link ${styles.menuItem}`}>
               Accueil
             </NavLink>
           </li>

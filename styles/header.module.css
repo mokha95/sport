@@ -29,6 +29,12 @@
   width: 25px;
 }
 
+.menuItem:hover{
+color:orangered !important;
+}
+
+
+
 /* .nav {
  
   position: fixed;

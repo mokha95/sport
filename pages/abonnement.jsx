@@ -9,7 +9,7 @@ const abonnement = () => {
           {" "}
           TROUVE FACILEMENT L&apos;ABONNEMENT QUI TE CONVIENT.
         </h1>
-        <p className="txtAbonnement text-center">
+        <p className="txtAbonnement text-center pt-4">
           En devenant membre de Mpower Gym, vous bénéficiez d&apos;un accès illimité
           à nos installations modernes et ultramodernes. Des équipements dernier
           cri aux espaces d&apos;entraînement spécialement conçus, notre salle de

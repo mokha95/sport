@@ -1,4 +1,4 @@
 export * from './AddEditHoraire';
 export * from './Layout';
-export *  from './SectionEvent';
-export *  from './ViewEvent';
+// export *  from './SectionHoraire';
+// export *  from './ViewHoraire';

@@ -35,7 +35,7 @@ async function create(params) {
     // save article
     await Article.save();
 }
-
+// verification dans la base de donnée si l article existe pour ensuite le modifier
 async function update(id, params) {
     const article = await db.Article.findByPk(id);
 
@@ -47,11 +47,11 @@ async function update(id, params) {
 
     await article.save();
 }
-
+// verification dans la base de donnée si l article existe si il existe il le supprime
 async function _delete(id) {
     const article = await db.Article.findByPk(id);
     if (!article) throw 'Article n&apos;existe pas';
 
-    // delete article
+    // supprime article
     await article.destroy();
 }

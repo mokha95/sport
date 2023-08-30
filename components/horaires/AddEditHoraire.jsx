@@ -38,8 +38,8 @@ function AddEditHoraire(props) {
     const formOptions = { resolver: yupResolver(validationSchema) };
 
     // set default form values if in edit mode
-    if (event) {
-        formOptions.defaultValues = props.event;
+    if (horaire) {
+        formOptions.defaultValues = props.horaire;
     }
 
     // get functions to build form with useForm() hook
@@ -52,18 +52,18 @@ function AddEditHoraire(props) {
     async function onSubmit(data) {
         alertService.clear();
         try {
-            // create or update event based on event prop
+            // create or update horaire based on horaire prop
             let message;
-            if (event) {
-                await eventService.update(event.id, data);
-                message = 'event modifié';
+            if (horaire) {
+                await horaireService.update(horaire.id, data);
+                message = 'horaire modifié';
             } else {
-                await eventService.register(data);
-                message = 'event ajouté';
+                await horaireService.register(data);
+                message = 'horaire ajouté';
             }
 
             // redirect to user list with success message
-            router.push('/events');
+            router.push('/horaires');
             alertService.success(message, true);
         } catch (error) {
             alertService.error(error);
@@ -75,35 +75,62 @@ function AddEditHoraire(props) {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
                 <div className="mb-3 col">
-                    <label className="form-label">Titre</label>
-                    <input name="title" type="text" {...register('title')} className={`form-control ${errors.title ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.title?.message}</div>
+                    <label className="form-label">Jour</label>
+                    <input name="Jour" type="text" {...register('jour')} className={`form-control ${errors.jour ? 'is-invalid' : ''}`} />
+                    <div className="invalid-feedback">{errors.jour?.message}</div>
                 </div>
                 <div className="mb-3 col">
-                    <label className="form-label">Description</label>
+                    <label className="form-label">debut matin</label>
                     <textarea
-                    name="description"
-                    {...register("description")}
-                    className={`form-control ${errors.description ? "is-invalid" : ""}`}
+                    name="debut_matin"
+                    {...register("debut_matin")}
+                    className={`form-control ${errors.debut_matin ? "is-invalid" : ""}`}
                     ></textarea>
-                    <div className="invalid-feedback">{errors.description?.message}</div>
+                    <div className="invalid-feedback">{errors.debut_matin?.message}</div>
                 </div>
             </div>
             <div className="row">
                 <div className="mb-3 col">
-                    <label className="form-label">Image</label>
-                    <input name="image" type="text" {...register('image')} className={`form-control ${errors.image ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.image?.message}</div>
+                    <label className="form-label">fin matin</label>
+                    <input name="fin_matin" type="text" {...register('fin_matin')} className={`form-control ${errors.fin_matin ? 'is-invalid' : ''}`} />
+                    <div className="invalid-feedback">{errors.fin_matin?.message}</div>
                 </div>
             </div>
             <div className="mb-3 col">
-                    <label className="form-label">Horaires</label>
+                    <label className="form-label">debut apres midi</label>
+                    <input
+                    name="debut_apresmidi" type='text'
+                    {...register("debut_apresmidi")}
+                    className={`form-control ${errors.debut_apresmidi ? "is-invalid" : ""}`}
+                    ></input>
+                    <div className="invalid-feedback">{errors.debut_apresmidi?.message}</div>
+                </div>
+            <div className="mb-3 col">
+                    <label className="form-label">fin apres midi</label>
                     <textarea
-                    name="horaires"
-                    {...register("rdv")}
-                    className={`form-control ${errors.rdv ? "is-invalid" : ""}`}
+                    name="fin_apresmidi"
+                    {...register("fin_apresmidi")}
+                    className={`form-control ${errors.fin_apresmidi ? "is-invalid" : ""}`}
                     ></textarea>
-                    <div className="invalid-feedback">{errors.rdv?.message}</div>
+                    <div className="invalid-feedback">{errors.fin_apresmidi?.message}</div>
+                </div>
+            <div className="mb-3 col">
+                    <label className="form-label">fermeture matin</label>
+                    <textarea
+                    name="fermeture_matin"
+                    {...register("fermeture_matin")}
+                    className={`form-control ${errors.fermeture_matin ? "is-invalid" : ""}`}
+                    ></textarea>
+                    <div className="invalid-feedback">{errors.fermeture_matin?.message}</div>
+                </div>
+            <div className="mb-3 col">
+                    <label className="form-label">apres midi</label>
+                    <textarea
+                    name="fermeture_apresmidi"
+                    {...register("fermeture_apresmidi")}
+                    className={`form-control ${errors.apresmidi ? "is-invalid" : ""}`}
+                    ></textarea>
+                    <div className="invalid-feedback">{errors.apresmidi?.message}</div>
                 </div>
             <div className="mb-3">
                 <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
@@ -111,7 +138,7 @@ function AddEditHoraire(props) {
                     Enregistrer
                 </button>
                 <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-                <Link href="/events" className="btn btn-link">Annuler</Link>
+                <Link href="/horaires" className="btn btn-link">Annuler</Link>
             </div>
         </form>
     );

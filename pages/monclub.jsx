@@ -34,10 +34,10 @@ const monclub = () => {
             ajouteront une dimension rafraîchissante à votre routine habituelle.
             <br />
             <br />
-            <span className="textFitness">
+            <span className="textFitness px-2 ">
               Que vous soyez un adepte du jogging
-            </span>
-            un amateur de HIIT ou simplement à la recherche d&apos;une manière
+            </span> 
+             un amateur de HIIT ou simplement à la recherche d&apos;une manière
             amusante de rester actif, nos Cours en Plein Air sont adaptés à tous
             les niveaux de forme physique. Peu importe votre expérience,
             préparez-vous à vous sentir revitalisé et à vivre une expérience

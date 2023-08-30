@@ -2,12 +2,12 @@ import Link from "next/link";
 
 
 export default Index;
-
+// composant pour la page admin
 function Index() {
   return (
     <div className="p-4">
       <div className="container">
-        <p>You&apos;re logged in with Next.js & JWT!!</p>
+        <p>Tableau de Bord</p>
         <p>
           <Link href="/users">Gérer les  utilisateurs</Link>
         </p>

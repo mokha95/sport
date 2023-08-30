@@ -23,7 +23,7 @@ const abonnement = () => {
         <div className=" carteAbonnement d-flex text-center  justify-content-center ">
           <div className="cardTarifs col-lg-4    ">
             <div className="typeAbonnement p-3">
-              <p>Classic</p>
+              <p className="m-0">Classic</p>
             </div>
             <div className="prixAbonnement pt-4">
               <p className="fw-bold">
@@ -47,7 +47,7 @@ const abonnement = () => {
           {/*  */}
           <div className="cardTarifs col-lg-4   ">
             <div className="typeAbonnement p-3 ">
-              <p>Classic</p>
+              <p className="m-0">essentiel </p>
             </div>
             <div className="prixAbonnement pt-4">
               <p className="fw-bold">
@@ -71,7 +71,7 @@ const abonnement = () => {
 
           <div className="cardTarifs col-lg-4   ">
             <div className="typeAbonnement p-3">
-              <p>Classic</p>
+              <p className="m-0">Premium </p>
             </div>
             <div className="prixAbonnement pt-4">
               <p className="fw-bold">

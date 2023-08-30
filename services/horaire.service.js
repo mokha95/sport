@@ -5,7 +5,9 @@ import { fetchWrapper } from 'helpers';
 // horaire.service declare les routes qu on va utiliser dans l 'api
 // methode fetch pour le crud  des articles
 const { publicRuntimeConfig } = getConfig();
+// routes pour acceder a l api
 const baseUrl = `${publicRuntimeConfig.apiUrl}/horaires`;
+
 
 export const horaireService = {
     register,
@@ -14,6 +16,7 @@ export const horaireService = {
     update,
     delete: _delete,
 };
+// quand tu veux enreigistrer un article il faut faire un fetch avec la methode post sur l adresse baseurlregister avec comme parametre article
 async function register(horaire) {
     await fetchWrapper.post(`${baseUrl}/register`, horaire);
 }

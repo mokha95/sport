@@ -26,6 +26,7 @@ function Edit() {
     return (
         <Layout>
             <h1>Modifier Horaire</h1>
+            {/* si l horaire existe ajoute l'horaire sinon affiche le spinner */}
             {horaire ? <AddEditHoraire horaire={horaire} /> : <Spinner />}
         </Layout>
     );

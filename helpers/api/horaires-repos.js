@@ -31,6 +31,7 @@ async function create(params) {
     // save Horaire
     await Horaire.save();
 }
+// verification dans la base de donnée si l horaire existe pour ensuite le modifier
 
 async function update(id, params) {
     const horaire = await db.Horaire.findByPk(id);
@@ -44,10 +45,11 @@ async function update(id, params) {
     await horaire.save();
 }
 
+// verification dans la base de donnée si l horaire existe pour ensuite le supprimer
 async function _delete(id) {
     const horaire = await db.horaire.findByPk(id);
     if (!horaire) throw 'L Evenement n&apos;existe pas';
 
-    // supprime l evenement
+    // supprime l horaire
     await horaire.destroy();
 }

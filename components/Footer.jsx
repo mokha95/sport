@@ -1,8 +1,20 @@
 import React from "react";
 import styles from "styles/footer.module.css";
 import { SectionHoraire } from "./horaires";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { userService } from "services";
 
 const Footer = () => {
+
+  const [user, setUser] = useState(null);
+// le useEffect a l ouverture de la page et éxécute les fonctions qui sont a l 'interieur
+  useEffect(() => {
+    const subscription = userService.user.subscribe((x) => setUser(x));
+    return () => subscription.unsubscribe();
+  }, []);
+
+
   return (
     <footer className={` pt-5 ${styles.couleurFooter}`}>
       <div className="container">
@@ -22,11 +34,18 @@ const Footer = () => {
             <h4> Aide & Informations</h4>
             <div className={styles.trait}></div>
             <ul className={`lh-lg ${styles.liste}`}>
-              <li> FAQ</li>
-              <li> Abonnements</li>
+            {/* si il est admin ou employe il peut acceder au dasboard */}
+            {user && (user.roles === "ADMIN" || user.roles === "EMPLOYE") ? (
+                <li className="nav-item">
+                  <Link href={"/admin"} className="nav-link ">
+                    Administration
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
+              
               <li> Contact</li>
-              <li> Blog</li>
-              <li> La Franchise</li>
             </ul>
           </div>
 

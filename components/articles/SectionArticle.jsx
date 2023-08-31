@@ -29,7 +29,7 @@ function SectionArticle() {
                   <div className={styles.txtBas}>
                   <img
                       className="img-fluid"
-                      src={`img/${article.image}`}
+                      src={`/img/${article.image}`}
                       alt="repas "
                     />
                     <div className={styles.separation}></div>

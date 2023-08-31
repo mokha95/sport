@@ -28,7 +28,7 @@ function SectionEvent() {
                   <div className={styles.txtBas}>
                   <img
                       className="img-fluid"
-                      src={`img/${event.image}`}
+                      src={`/img/${event.image}`}
                       alt="repas "
                     />
                     <div className={styles.separation}></div>
@@ -37,7 +37,7 @@ function SectionEvent() {
                       <div className={styles.trait2}></div>
                       <Link
                         className={styles.liensEvent}
-                        href={`/events/event/${event.id}`}
+                        href={`/event/${event.id}`}
                       >
                         Lire la suite
                       </Link>

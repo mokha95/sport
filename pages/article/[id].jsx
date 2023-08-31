@@ -31,7 +31,7 @@ function Article() {
         <>
         <h1>{article.title}</h1>
             <p>{article.content}</p>
-            <img className="img-fluid" src={`public/img/${article.image}`}  alt="repas "  />  
+            <img className="img-fluid" src={`/img/${article.image}`}  alt="repas "  />  
         </>
     </Layout>)
       } else {

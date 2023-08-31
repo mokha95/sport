@@ -32,13 +32,13 @@ function Index() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                    <th style={{ width: '30%' }}>Jour</th>
-                        <th style={{ width: '30%' }}>debut matin</th>
-                        <th style={{ width: '30%' }}>fin matin</th>
-                        <th style={{ width: '30%' }}>debut aprés midi</th>
-                        <th style={{ width: '30%' }}>fin aprés midi</th>
-                        <th style={{ width: '30%' }}>fermeture matin</th>
-                        <th style={{ width: '30%' }}>fermeture aprés midi</th>
+                    <th style={{ width: '13%' }}>Jour</th>
+                        <th style={{ width: '15%' }}>debut matin</th>
+                        <th style={{ width: '15%' }}>fin matin</th>
+                        <th style={{ width: '15%' }}>debut aprés midi</th>
+                        <th style={{ width: '15%' }}>fin aprés midi</th>
+                        <th style={{ width: '15%' }}>fermeture matin</th>
+                        <th style={{ width: '15%' }}>fermeture aprés midi</th>
                         <th style={{ width: '10%' }}></th>
                     </tr>
                 </thead>

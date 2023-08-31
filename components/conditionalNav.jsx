@@ -43,9 +43,10 @@ const ConditionalNav = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink href={"/profil"} className="nav-link ">
+          <p className='membreP'>
+        <span>Membre connecté(e) : </span>
               {user.firstName}
-            </NavLink>
+          </p>
           </li>
         </ul>
                

@@ -103,6 +103,13 @@ function AddEdit(props) {
                     <div className="invalid-feedback">{errors.password?.message}</div>
                 </div>
             </div>
+            <div className="row">
+                <div className="mb-3 col">
+                    <label className="form-label">role</label>
+                    <input name="roles" type="text" {...register('roles')} className={`form-control ${errors.roles ? 'is-invalid' : ''}`} />
+                    <div className="invalid-feedback">{errors.roles?.message}</div>
+                </div>
+            </div>    
             <div className="mb-3">
                 <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
                     {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}

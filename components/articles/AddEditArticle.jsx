@@ -22,7 +22,7 @@ function AddEditArticle(props) {
         content: Yup.string()
         .required('Un contenu est requis'),
         image: Yup.string()
-        .required('Une image est requise'),
+        .required('Une image est requise '),
        
     });
     const formOptions = { resolver: yupResolver(validationSchema) };

@@ -28,6 +28,11 @@ async function initialize() {
     db.Article = articleModel(sequelize);
     db.Event = eventModel(sequelize);
     db.Horaire = horaireModel(sequelize);
+    db.Contact = contactModel(sequelize);
+    
+      // Add foreign key 'userId' to link Event with User
+    db.Event.belongsTo(db.User, { foreignKey: "userId" });
+    db.Article.belongsTo(db.User, { foreignKey: "userId" });
     // synchroniser les tables avec la base de donnée a chaque connexion  vérifie quel est l'état actuel de la table dans la base de données puis effectue les modifications nécessaires dans la table pour qu'elle corresponde au modèle.
     await sequelize.sync({ alter: true });
 
@@ -100,4 +105,17 @@ function horaireModel(sequelize){
         fermeture_apresmidi: {type: DataTypes.TINYINT, allowNull: true},
     };
     return sequelize.define('Horaire', attributes);
+}
+
+// model contact
+
+function contactModel(sequelize){
+    const attributes = {
+        firtsName: {type: DataTypes.STRING, allowNull: false},
+        lastName: {type:DataTypes.TEXT, allowNull: false},
+        email : {type: DataTypes.STRING, allowNull: false},
+        numero: {type: DataTypes.STRING, allowNull: false},
+        message : {type: DataTypes.STRING, allowNull: false},
+    }
+    return sequelize.define('Contact', attributes);
 }

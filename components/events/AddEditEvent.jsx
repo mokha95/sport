@@ -4,15 +4,25 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-
-import { eventService, alertService } from 'services';
+import { useState, useEffect } from "react";
+import { eventService,userService, alertService } from 'services';
 // composant AddEdit est utilisé à la fois pour ajouter et modifier des utilisateurs, il contient un formulaire construit avec la bibliothèque React Hook Form et est utilisé par la page d'ajout d'utilisateur et la page de modification d'utilisateur .
 
 export { AddEditEvent };
 
 function AddEditEvent(props) {
+
+    const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const subscription = userService.user.subscribe((x) => setUser(x));
+    return () => subscription.unsubscribe();
+  }, []);
+
     const event = props?.event;
     const router = useRouter();
+
+
 
     // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
     // form validation rules 
@@ -63,7 +73,10 @@ function AddEditEvent(props) {
         }
     }
 
+    if(user){
+
     return (
+      
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
                 <div className="mb-3 col">
@@ -97,6 +110,14 @@ function AddEditEvent(props) {
                     ></textarea>
                     <div className="invalid-feedback">{errors.rdv?.message}</div>
                 </div>
+
+                <input
+                name="userId"
+                type="hidden"
+                value={user.id}
+                {...register("userId")}
+        />
+
             <div className="mb-3">
                 <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
                     {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
@@ -106,5 +127,9 @@ function AddEditEvent(props) {
                 <Link href="/events" className="btn btn-link">Annuler</Link>
             </div>
         </form>
+
+        
     );
+}
+
 }

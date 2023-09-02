@@ -1,4 +1,4 @@
-export * from './AddEditEvent';
+export * from './AddEditContact';
 export * from './Layout';
-export *  from './SectionEvent';
+export *  from './SectionContact';
 

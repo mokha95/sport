@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { Layout, AddEditContact} from 'components/contacts';
+import { Layout, AddEditontact } from 'components/contacts';
 import { Spinner } from 'components';
 import { contactService, alertService } from 'services';
 
 export default Edit;
 
-// page pour modifier un contact
 function Edit() {
     const router = useRouter();
     const [contact, setContact] = useState(null);
@@ -25,9 +24,8 @@ function Edit() {
 
     return (
         <Layout>
-            <h1>Modifier le Contact</h1>
-            {/* si l contact existe ajoute l'contact sinon affiche le spinner */}
-            {contact ? <AddEditContact contact={contact} /> : <Spinner />}
+            <h1>Modifier Evenement</h1>
+            {contact ? <AddEditontact contact={contact} /> : <Spinner />}
         </Layout>
     );
 }

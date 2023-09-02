@@ -118,7 +118,7 @@ function AddEditContact(props) {
                 Envoyer
             </button>
             <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-            <Link href="/users" className="btn btn-link">Annuler</Link>
+            <Link href="/contacts" className="btn btn-link">Annuler</Link>
         </div>
     </form>
 

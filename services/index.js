@@ -3,3 +3,4 @@ export * from './user.service';
 export * from './article.service';
 export * from './event.service';
 export * from './horaire.service';
+export * from './contact.service';

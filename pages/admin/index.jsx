@@ -29,6 +29,9 @@ function Index() {
             <p>
               <Link href="/horaires">Gérer les horaires</Link>
             </p>
+            <p>
+          <Link href="/contacts">Gérer les contacts</Link>
+        </p>
           </>
         ) : (
           ""
@@ -41,6 +44,7 @@ function Index() {
         <p>
           <Link href="/events">Gérer les evenements</Link>
         </p>
+      
         </>) :(
         <><p>  Vous n&apos;êtes pas authorisé à accéder à cet espace </p></>
         )}

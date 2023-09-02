@@ -6,4 +6,5 @@ export * from './users-repo';
 export * from './articles-repo';
 export * from './events-repo';
 export * from './horaires-repos.js';
+export * from './contacts-repo.js';
 

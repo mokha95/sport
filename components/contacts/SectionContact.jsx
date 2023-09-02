@@ -1,4 +1,4 @@
-import { eventService } from "services";
+import { contactService } from "services";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "styles/article.module.css";
@@ -6,9 +6,9 @@ import styles from "styles/article.module.css";
 export { SectionEvent };
 
 function SectionEvent() {
-  const [events, setEvents] = useState(null);
+  const [contacts, setContacs] = useState(null);
   useEffect(() => {
-    eventService.getVarious().then((x) => setEvents(x));
+    contactService.getVarious().then((x) => setContacs(x));
   }, []);
 
   return (
@@ -22,22 +22,22 @@ function SectionEvent() {
         </div>
         <div className="container mt-5   ">
           <div className="row ">
-            {events &&
-                events.map((event) => (
-                <div className="col-lg-4" key={event.id}>
+            {contacts &&
+              contacts.map((contact) => (
+                <div className="col-lg-4" key={contact.id}>
                   <div className={styles.txtBas}>
                   <img
                       className="img-fluid"
-                      src={`/img/${event.image}`}
+                      src={`/img/${contact.image}`}
                       alt="repas "
                     />
                     <div className={styles.separation}></div>
                     <div className={styles.blocCard}>
-                      <h4 className={styles.titreBlog}>{event.title}</h4>
+                      <h4 className={styles.titreBlog}>{contact.title}</h4>
                       <div className={styles.trait2}></div>
                       <Link
                         className={styles.liensEvent}
-                        href={`/event/${event.id}`}
+                        href={`/contact/${contact.id}`}
                       >
                         Lire la suite
                       </Link>

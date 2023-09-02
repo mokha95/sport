@@ -1,11 +1,11 @@
-import { Layout, AddEditContact } from 'components/articles';
+import { Layout, AddEditContact } from 'components/contacts';
 
 export default Add;
 
 function Add() {
     return (
         <Layout>
-            <h1>Ajouter un Contact</h1>
+            <h1>Ajouter un contact</h1>
             <AddEditContact />
         </Layout>
     );

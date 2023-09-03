@@ -34,18 +34,25 @@ const Footer = () => {
             <h4> Aide & Informations</h4>
             <div className={styles.trait}></div>
             <ul className={`lh-lg ${styles.liste}`}>
-            {/* si il est admin ou employe il peut acceder au dasboard */}
-            {user && (user.roles === "ADMIN" || user.roles === "EMPLOYE") ? (
+            {/* si il est admin ou employe il peut acceder au dashboard */}
+            {user && (user.roles === "ADMIN" || user.roles === "EMPLOYEE") ? (
                 <li className="nav-item">
                   <Link href={"/admin"} className="nav-link ">
                     Administration
+                  </Link>
+                  <Link href={"/admin"} className="nav-link ">
+                    Contact
                   </Link>
                 </li>
               ) : (
                 ""
               )}
+           <li className="nav-item">
+            <Link href={"/"} className="nav-link " >
+                Contacter Mpower gym
+            </Link>
+           </li>
               
-              <li> Contact</li>
             </ul>
           </div>
 

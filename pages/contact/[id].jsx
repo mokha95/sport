@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { Layout, AddEditContact } from 'components/horaires';
+import { Layout, AddEditContact } from 'components/contacts';
 import { Spinner } from 'components';
 import { contactService, alertService } from 'services';
 
@@ -19,13 +19,13 @@ function Edit() {
 
         // fetch contact and set default form values if in edit mode
         contactService.getById(id)
-            .then(x => setHoraire(x))
+            .then(x => setContact(x))
             .catch(alertService.error)
     }, [router]);
 
     return (
         <Layout>
-            <h1>Modifier Horaire</h1>
+            <h1>ModifierContact</h1>
             {/* si l contact existe ajoute l'contact sinon affiche le spinner */}
             {contact ? <AddEditContact contact={contact} /> : <Spinner />}
         </Layout>

@@ -26,54 +26,70 @@ function Index() {
 
     return (
         <Layout>
-            <h1>Contact</h1>
-            <Link href="/contacts/add" className="btn btn-sm btn-success mb-2">Ajouter un contact</Link>
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th style={{ width: '20%' }}>Prenom</th>
-                        <th style={{ width: '20%' }}>nom</th>
-                        <th style={{ width: '20%' }}>email</th>
-                        <th style={{ width: '20%' }}>numero</th>
-                        <th style={{ width: '20%' }}>message</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {contacts && contacts.map(contact =>
-                        <tr key={contact.id}>
-                            <td>{contact.title}</td>
-                          
-
-                            <td > <p> {contact.content}</p></td>
-                           
-                            <td>{contact.image}</td>
-                            <td style={{ whiteSpace: 'nowrap' }}>
-                                <Link href={`/contacts/edit/${contact.id}`} className="btn btn-sm btn-primary me-1">Modifier</Link>
-                                <button onClick={() => deleteContact(contact.id)} className="btn btn-sm btn-danger btn-delete-user" style={{ width: '60px' }} disabled={contact.isDeleting}>
-                                    {contact.isDeleting
-                                        ? <span className="spinner-border spinner-border-sm"></span>
-                                        : <span>Effacer</span>
-                                    }
-                                </button>
-                            </td>
-                        </tr>
-                    )}
-                    {!contacts &&
-                       ( <tr>
-                            <td colSpan="4">
-                                <Spinner />
-                            </td>
-                        </tr>)
-                    }
-                    {contacts && !contacts.length &&
-                        (<tr>
-                            <td colSpan="4" className="text-center">
-                                <div className="p-2">Pas de contacts à afficher</div>
-                            </td>
-                        </tr>)
-                    }
-                </tbody>
-            </table>
+          <h1>Contact</h1>
+          <Link href="/contacts/add" className="btn btn-sm btn-success mb-2">
+            Ajouter un contact
+          </Link>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th style={{ width: "12.5%" }}>Prenom</th>
+                <th style={{ width: "12.5%" }}>nom</th>
+                <th style={{ width: "12.5%" }}>email</th>
+                <th style={{ width: "12.5%" }}>numero</th>
+                <th style={{ width: "40%" }}>message</th>
+                <th style={{ width: "10%" }}></th>
+              </tr>
+            </thead>
+            <tbody>
+              {contacts &&
+                contacts.map((contact) => (
+                  <tr key={contact.id}>
+                    <td>{contact.firstName}</td>
+                    <td>{contact.lastName}</td>
+                    <td>{contact.email}</td>
+                    <td>{contact.numero}</td>
+                    <td>
+                      <p style={{ maxWidth: "40%" }}> {contact.message}</p>
+                    </td>
+                    <td style={{ whiteSpace: "nowrap" }}>
+                      <Link
+                        href={`/contacts/edit/${contact.id}`}
+                        className="btn btn-sm btn-primary me-1"
+                      >
+                        Modifier
+                      </Link>
+                      <button
+                        onClick={() => deleteContact(contact.id)}
+                        className="btn btn-sm btn-danger btn-delete-user"
+                        style={{ width: "60px" }}
+                        disabled={contact.isDeleting}
+                      >
+                        {contact.isDeleting ? (
+                          <span className="spinner-border spinner-border-sm"></span>
+                        ) : (
+                          <span>Effacer</span>
+                        )}
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              {!contacts && (
+                <tr>
+                  <td colSpan="4">
+                    <Spinner />
+                  </td>
+                </tr>
+              )}
+              {contacts && !contacts.length && (
+                <tr>
+                  <td colSpan="4" className="text-center">
+                    <div className="p-2">Pas de contacts à afficher</div>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </Layout>
-    );
-}
+      );
+    }

@@ -1,5 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 
+// systeme  d'alerte
 const alertSubject = new BehaviorSubject(null);
 
 export const alertService = {

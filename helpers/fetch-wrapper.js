@@ -22,16 +22,18 @@ function request(method) {
             requestOptions.headers['Content-Type'] = 'application/json';
             requestOptions.body = JSON.stringify(body);
         }
-        return fetch(url, requestOptions).then(handleResponse);
+        return fetch(url,requestOptions).then(handleResponse);
     }
 }
 
-// helper functions
+// permet à l'API de vérifier l'authenticité de l'utilisateur.
 
 function authHeader(url) {
     // return auth header with jwt if user is logged in and request is to the api url
     const user = userService.userValue;
+    // vérifie si l'utilisateur est connecté en examinant la propriété token
     const isLoggedIn = user?.token;
+    // vérifie si l'URL de la requête commence par l'URL de l'API en comparant url à publicRuntimeConfig.apiUrl. Cela permet de déterminer si la requête est destinée à l'API ou à un autre endpoint.
     const isApiUrl = url.startsWith(publicRuntimeConfig.apiUrl);
     if (isLoggedIn && isApiUrl) {
         return { Authorization: `Bearer ${user.token}` };
@@ -44,14 +46,14 @@ async function handleResponse(response) {
     const isJson = response.headers?.get('content-type')?.includes('application/json');
     const data = isJson ? await response.json() : null;
 
-    // check for error response
+    // verifier les erreurs des reponses
     if (!response.ok) {
         if ([401, 403].includes(response.status) && userService.userValue) {
-            // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
+            // deconnexion automatique si la reponse nest pas bonne 
             userService.logout();
         }
 
-        // get error message from body or default to response status
+        // réer un message d'erreur à partir de la réponse HTTP en cas d'erreur, puis rejeter une promesse avec ce message d'erreur
         const error = (data && data.message) || response.statusText;
         return Promise.reject(error);
     }

@@ -77,12 +77,7 @@ const monclub = () => {
         <br />
       </div>
 
-      {/* <div className="container">
-        <h2 className="text-center">Cours Collectif </h2>
-        <div className="row">
-          <div className="col-lg-6"></div>
-        </div>
-      </div> */}
+   
     </>
   );
 };

@@ -14,21 +14,22 @@ export default App;
 
 function App({ Component, pageProps }) {
     const router = useRouter();
+    // au depart l'utilisateur nest pas connecte
     const [user, setUser] = useState(null);
     const [authorized, setAuthorized] = useState(false);
 
     useEffect(() => {
-        // on initial load - run auth check 
+        // lors du chargement initial - exécuter la vérification d'authentification
         authCheck(router.asPath);
 
-        // on route change start - hide page content by setting authorized to false  
+        // au début du changement d'itinéraire - masquer le contenu de la page en définissant autorisé sur faux 
         const hideContent = () => setAuthorized(false);
         router.events.on('routeChangeStart', hideContent);
 
-        // on route change complete - run auth check 
+        // vérification d'authentification
         router.events.on('routeChangeComplete', authCheck)
 
-        // unsubscribe from events in useEffect return function
+        // se désabonner des événements dans la fonction de retour useEffect
         return () => {
             router.events.off('routeChangeStart', hideContent);
             router.events.off('routeChangeComplete', authCheck);
@@ -42,10 +43,11 @@ function App({ Component, pageProps }) {
         // toute les pages que peut visiter l'utilisateur sans  etre connecter
         const publicPaths = ['/account/login', '/account/register', '/', '/monclub', '/abonnement'];
         const path = url.split('?')[0];
-        // si il n y a pas de user si le chemin n apartient pas au chemin public il renvoi a la page connexion
+        // Si l'utilisateur n'est pas connecté et que la page actuelle n'est pas publique
         // dans le cas contraire il renvoie true
         if (!userService.userValue && !publicPaths.includes(path)) {
             setAuthorized(false);
+            // redirection vers la page connexion
             router.push({
                 pathname: '/account/login',
                 query: { returnUrl: router.asPath }

@@ -109,13 +109,13 @@ function horaireModel(sequelize){
 
 // model contact
 
-function contactModel(sequelize){
+function contactModel(sequelize) {
     const attributes = {
-        firtsName: {type: DataTypes.STRING, allowNull: false},
-        lastName: {type:DataTypes.TEXT, allowNull: false},
-        email : {type: DataTypes.STRING, allowNull: false},
-        numero: {type: DataTypes.STRING, allowNull: false},
-        message : {type: DataTypes.STRING, allowNull: false},
-    }
-    return sequelize.define('Contact', attributes);
+      firstName: { type: DataTypes.STRING, allowNull: false },
+      lastName: { type: DataTypes.STRING, allowNull: false },
+      email: { type: DataTypes.STRING, allowNull: false },
+      numero: { type: DataTypes.STRING, allowNull: false },
+      message: { type: DataTypes.TEXT, allowNull: false },
+    };
+    return sequelize.define("Contact", attributes);
 }

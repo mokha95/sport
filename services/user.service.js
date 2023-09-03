@@ -5,6 +5,7 @@ import Router from 'next/router';
 import { fetchWrapper } from 'helpers';
 import { alertService } from './alert.service';
 
+// fetchWrapper effectuer des requêtes HTTP
 // accés a l'api (gestion des utilisateurs)
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;

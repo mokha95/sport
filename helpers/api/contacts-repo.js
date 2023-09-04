@@ -31,19 +31,9 @@ async function create(params) {
     // save Horaire
     await Contact.save();
 }
-// verification dans la base de donnée si l Contact existe pour ensuite le modifier
 
-async function update(id, params) {
-    const contact = await db.Contact.findByPk(id);
 
-    // validate
-    if (!contact) throw 'L Contact n&apos;existe pas';
 
-    // copy params properties to user
-    Object.assign(contact, params);
-
-    await contact.save();
-}
 
 // verification dans la base de donnée si l contact existe pour ensuite le supprimer
 async function _delete(id) {

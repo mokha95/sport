@@ -1,4 +1,2 @@
-export * from './AddEditContact';
-export * from './Layout';
-export *  from './SectionContact';
-
+export * from "./AddContact";
+export * from "./Layout";

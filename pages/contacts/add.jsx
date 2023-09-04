@@ -1,12 +1,12 @@
-import { Layout, AddEditContact } from 'components/contacts';
+import { Layout, AddContact } from "components/contacts";
 
 export default Add;
 
 function Add() {
-    return (
-        <Layout>
-            <h1>Ajouter un contact</h1>
-            <AddEditContact />
-        </Layout>
-    );
+  return (
+    <Layout>
+      <h1>Contactez GymPower</h1>
+      <AddContact />
+    </Layout>
+  );
 }

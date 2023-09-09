@@ -61,6 +61,14 @@ const Footer = () => {
                  Lire nos articles
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  href="/events/listeEvents"
+                  className="btn btn-sm btn-success mb-2"
+                >
+                 Lire nos événements
+                </Link>
+              </li>
           
               
             </ul>

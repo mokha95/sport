@@ -4,7 +4,7 @@ import { SectionEvent } from "components/events";
 const monclub = () => {
   return (
     <>
-      <div className="container blocClub text-center">
+      <div className="container blocClub ">
         <div className="row d-flex ">
           <h1 className="pb-5">
             {" "}

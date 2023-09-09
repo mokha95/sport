@@ -9,7 +9,6 @@ export const contactsRepo = {
     getAll,
     getById,
     create,
-    update,
     delete: _delete,
     
 };

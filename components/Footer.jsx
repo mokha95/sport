@@ -16,7 +16,7 @@ const Footer = () => {
 
 
   return (
-    <footer className={` pt-5 ${styles.couleurFooter}`}>
+    <footer className={` pt-5 mt-3 ${styles.couleurFooter}`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
@@ -40,18 +40,28 @@ const Footer = () => {
                   <Link href={"/admin"} className="nav-link ">
                     Administration
                   </Link>
-                  <Link href={"/admin"} className="nav-link ">
-                    Contact
-                  </Link>
+                 
                 </li>
               ) : (
                 ""
               )}
-           <li className="nav-item">
-            <Link href={"/"} className="nav-link " >
-                Contacter Mpower gym
-            </Link>
-           </li>
+              <li className="nav-item">
+                <Link
+                  href="/contacts/add"
+                  className="btn btn-sm btn-success mb-2"
+                >
+                  Contacter GymPower
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  href="/articles/listeArticles"
+                  className="btn btn-sm btn-success mb-2"
+                >
+                 Lire nos articles
+                </Link>
+              </li>
+          
               
             </ul>
           </div>

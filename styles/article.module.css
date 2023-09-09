@@ -37,6 +37,10 @@
   padding: 25px 20px 15px;
 }
 
+.blocCard a{
+  color: #fff;
+}
+
 .separation {
   height: 15px;
   background-color: white;

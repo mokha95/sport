@@ -94,7 +94,7 @@ const ConditionalNav = () => {
 
           <li className="nav-item ">
             <NavLink href="/" className="  nav-NavLink">
-              <img src="img/Icon.png" alt="Logo " className={styles.imgLogo} />
+              <img src="/img/Icon.png" alt="Logo " className={styles.imgLogo} />
             </NavLink>
           </li>
 

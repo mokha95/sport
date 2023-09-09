@@ -31,8 +31,8 @@ async function initialize() {
     db.Contact = contactModel(sequelize);
     
       // Add foreign key 'userId' to link Event with User
+      db.Article.belongsTo(db.User, { foreignKey: "userId" });
     db.Event.belongsTo(db.User, { foreignKey: "userId" });
-    db.Article.belongsTo(db.User, { foreignKey: "userId" });
     // synchroniser les tables avec la base de donnée a chaque connexion  vérifie quel est l'état actuel de la table dans la base de données puis effectue les modifications nécessaires dans la table pour qu'elle corresponde au modèle.
     await sequelize.sync({ alter: true });
 

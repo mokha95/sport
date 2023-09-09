@@ -27,10 +27,10 @@ function Index() {
               </Link>
             </p>
             <p>
-              <Link href="/horaires">Gérer les horaires</Link>
+              <Link href="/horaires" className="nav-link ">Gérer les horaires</Link>
             </p>
             <p>
-          <Link href="/contacts">Gérer les contacts</Link>
+          <Link href="/contacts" className="nav-link ">Gérer les contacts</Link>
         </p>
           </>
         ) : (
@@ -39,10 +39,10 @@ function Index() {
         {user && (user.roles === "ADMIN" || user.roles === "EMPLOYEE") ? (
        <>
         <p>
-          <Link href="/articles">Gérer les Articles</Link>
+          <Link href="/articles" className="nav-link ">Gérer les Articles</Link>
         </p>
         <p>
-          <Link href="/events">Gérer les evenements</Link>
+          <Link href="/events" className="nav-link ">Gérer les evenements</Link>
         </p>
       
         </>) :(

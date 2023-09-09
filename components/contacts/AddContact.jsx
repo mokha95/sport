@@ -97,12 +97,12 @@ function AddContact() {
       <div className="row">
         <div className="mb-3 col">
           <label className="form-label">Message</label>
-          <input
+          <textarea
             name="message"
             type="text"
             {...register("message")}
             className={`form-control ${errors.message ? "is-invalid" : ""}`}
-          />
+            ></textarea>
           <div className="invalid-feedback">{errors.message?.message}</div>
         </div>
       </div>

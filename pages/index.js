@@ -11,6 +11,7 @@ export default Home;
 function Home() {
     return (
         <div >
+       
             <Main />
             <Section />
             <SectionArticle/>

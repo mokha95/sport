@@ -48,12 +48,12 @@ const Section = () => {
               </div>
 
               <div className="btn2 ">
-                <Link href="/">
+                <Link href="/contacts/add">
                   {" "}
                   <button className="btnGlobal mt-2">
                     RÉSERVE TA SÉANCE D&apos;ESSAI
                     <br />
-                       <span className={styles.btnNum}>au 01 20 65 75 89</span>   
+                      
 
                   </button>
                 </Link>

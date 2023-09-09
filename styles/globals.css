@@ -199,6 +199,10 @@ main p {
   color: var(--secondary);
   font-weight: 600;
 }
+
+.boutons-footer{
+  color:#fff;
+}
 /* 
 .texteClub p {
   margin: 0 auto;

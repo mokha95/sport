@@ -16,7 +16,7 @@ const Footer = () => {
 
 
   return (
-    <footer className={` pt-5 mt-3 ${styles.couleurFooter}`}>
+    <footer className={` pt-5  ${styles.couleurFooter}`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
@@ -37,7 +37,7 @@ const Footer = () => {
             {/* si il est admin ou employe il peut acceder au dashboard */}
             {user && (user.roles === "ADMIN" || user.roles === "EMPLOYEE") ? (
                 <li className="nav-item">
-                  <Link href={"/admin"} className="nav-link ">
+                  <Link href={"/admin"} className="btn btn-sm boutons-footer mb-2">
                     Administration
                   </Link>
                  
@@ -48,7 +48,7 @@ const Footer = () => {
               <li className="nav-item">
                 <Link
                   href="/contacts/add"
-                  className="btn btn-sm btn-success mb-2"
+                  className="btn btn-sm boutons-footer mb-2"
                 >
                   Contacter GymPower
                 </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
               <li className="nav-item">
                 <Link
                   href="/articles/listeArticles"
-                  className="btn btn-sm btn-success mb-2"
+                  className="btn btn-sm boutons-footer mb-2"
                 >
                  Lire nos articles
                 </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li className="nav-item">
                 <Link
                   href="/events/listeEvents"
-                  className="btn btn-sm btn-success mb-2"
+                  className="btn btn-sm boutons-footer mb-2"
                 >
                  Lire nos événements
                 </Link>

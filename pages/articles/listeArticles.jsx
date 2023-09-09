@@ -22,7 +22,7 @@ function ListeArticles() {
   return (
       <>
     { user  ? ( 
-      <article>
+      <article className="mb-3">
         <div className={styles.actu}>
           <h2 className="text-center">ACTUALITÉS MPOWER GYM</h2>
 

@@ -50,7 +50,7 @@ function Register() {
 
     return (
         <Layout>
-            <div className="card">
+            <div className="card mb-5">
                 <h4 className="card-header">Inscription</h4>
                 <div className="card-body">
                     <form onSubmit={handleSubmit(onSubmit)}>

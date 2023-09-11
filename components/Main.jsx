@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Main = () => {
   return (
-    <main className={styles.menu}>
+    <main className={styles.menu} >
       <div className="container p-5  ">
         <div className="row pt-5  ">
           <div className=" col-lg-6 ">
@@ -30,7 +30,7 @@ const Main = () => {
                 vos rêves les plus fous.
               </p>
               <div className="btn1 mt-5">
-                <Link href="/">
+                <Link href="/account/register">
                   {" "}
                   <button className={`btn  ${styles.btnPage}`}>
                     {" "}

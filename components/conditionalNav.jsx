@@ -50,7 +50,7 @@ const ConditionalNav = () => {
           </li>
         </ul>
                
-        <button onClick={userService.logout} className="btn btn-link nav-item nav-link">Logout</button>
+        <button onClick={userService.logout} className="btn btn-link nav-item nav-link">Se déconnecter</button>
 
 
     

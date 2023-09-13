@@ -203,11 +203,10 @@ main p {
 .boutons-footer{
   color:#fff;
 }
-/* 
-.texteClub p {
-  margin: 0 auto;
-} */
 
-.Salle1 {
-  /* width: 600px; */
+.btnInscription{
+ background-color: var(--secondary);
+}
+.btnInscription:hover{
+ background-color: var(--secondary);
 }

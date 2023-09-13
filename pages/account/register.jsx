@@ -74,7 +74,7 @@ function Register() {
                             <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
-                        <button disabled={formState.isSubmitting} className="btn btn-primary">
+                        <button disabled={formState.isSubmitting} className="btn btnInscription">
                             {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
                             Inscription
                         </button>

@@ -10,14 +10,17 @@ export const config = {
 
 const readFile = (req, saveLocally) => {
   const options = {};
+  console.log(path);
   if (saveLocally) {
     options.uploadDir = path.join(process.cwd(), "/public/img");
+    options.keepExtensions = true;
     options.filename = (name, ext, path, form) => {
-      path.originalFilename;
+      return `${name}${ext}`;
     };
   }
   options.maxFileSize = 4000 * 1024 * 1024;
   const form = formidable(options);
+  form.keepExtensions = true;
   return new Promise((resolve, reject) => {
     form.parse(req, (err, fields, files) => {
       if (err) reject(err);

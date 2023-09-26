@@ -73,13 +73,13 @@ const ConditionalNav = () => {
           </li> */}
 
           <li className="nav-item">
-            <NavLink href="/monclub" className="nav-link ">
+            <NavLink href="/monclub" className={`nav-link ${styles.menuItem}`}>
               Mon Club
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink href={"/abonnement"} className="nav-link ">
+            <NavLink href={"/abonnement"} className={`nav-link ${styles.menuItem}`}>
               Abonnement
             </NavLink>
           </li>

@@ -26,7 +26,7 @@ function Index() {
 
     return (
         <Layout>
-            <h1>Users</h1>
+            <h1>Utilisateur</h1>
             <Link href="/users/add" className="btn btn-sm btn-success mb-2">Ajouter membre</Link>
             <table className="table table-striped">
                 <thead>
@@ -44,7 +44,7 @@ function Index() {
                             <td>{user.lastName}</td>
                             <td>{user.email}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
-                                <Link href={`/users/edit/${user.id}`} className="btn btn-sm btn-primary me-1">Edit</Link>
+                                <Link href={`/users/edit/${user.id}`} className="btn btn-sm btn-primary me-1">Modifier</Link>
                                 <button onClick={() => deleteUser(user.id)} className="btn btn-sm btn-danger btn-delete-user" style={{ width: '60px' }} disabled={user.isDeleting}>
                                     {user.isDeleting
                                         ? <span className="spinner-border spinner-border-sm"></span>

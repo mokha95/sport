@@ -82,11 +82,21 @@ main p {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 490px){
+
+.contenu-footer{
+  margin-left: 15% !important;
+}
+}
 @media (max-width: 992px){
   .navbar-expand-lg .navbar-nav {
     flex-direction: column;
     align-items: start !important;
    
+}
+
+.contenu-footer{
+  margin-left: 30%;
 }
 }
 
@@ -97,6 +107,7 @@ main p {
   .btn1 {
     margin-bottom: 30px;
   }
+
 }
 
 /* SECTION */
@@ -207,6 +218,16 @@ main p {
 .btnInscription{
  background-color: var(--secondary);
 }
+
 .btnInscription:hover{
  background-color: var(--secondary);
 }
+
+.btnReset{
+  background-color: var(--primary);
+  color: #fff;
+ }
+.btnReset:hover{
+  background-color: var(--primary);
+  color: #fff;
+ }

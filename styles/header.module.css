@@ -29,8 +29,14 @@
   width: 25px;
 }
 
+.menuItem{
+font-weight: bold;
+
+}
 .menuItem:hover{
 color:orangered !important;
+
+
 }
 
 

@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer className={` pt-5  ${styles.couleurFooter}`}>
       <div className="container">
-        <div className="row">
+        <div className="row contenu-footer">
           <div className="col-lg-4">
             <h4>Mpower Gym</h4>
             <div className={styles.trait}></div>

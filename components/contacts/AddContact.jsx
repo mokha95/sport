@@ -110,7 +110,7 @@ function AddContact() {
         <button
           type="submit"
           disabled={formState.isSubmitting}
-          className="btn btn-primary me-2"
+          className="btn btnInscription me-2"
         >
           {formState.isSubmitting && (
             <span className="spinner-border spinner-border-sm me-1"></span>
@@ -121,7 +121,7 @@ function AddContact() {
           onClick={() => reset(formOptions.defaultValues)}
           type="button"
           disabled={formState.isSubmitting}
-          className="btn btn-secondary"
+          className="btn btnReset"
         >
           Reset
         </button>

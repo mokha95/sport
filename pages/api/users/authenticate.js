@@ -1,5 +1,6 @@
 import { apiHandler, usersRepo } from 'helpers/api';
 
+// route publique pour authentifier le nom d'utilisateur et le mot de passe et générer un jeton JWT.
 export default apiHandler({
     post: authenticate
 });

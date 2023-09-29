@@ -5,6 +5,8 @@ import { alertService } from 'services';
 
 export { Alert };
 
+// // useRouter est un hook fourni par Next.js qui permet d'accéder à l'objet router. Cet objet router contient des informations sur l'URL actuelle et fournit des méthodes pour effectuer des opérations de navigation.
+
 function Alert() {
     const router = useRouter();
     const [alert, setAlert] = useState(null);

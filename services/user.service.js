@@ -9,11 +9,14 @@ import { alertService } from './alert.service';
 // accés a l'api (gestion des utilisateurs)
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
-// si la fenetre est ouverte cest que  l utilisateur est à l interieur
+// stocke l etat de l utilisateur si la fenetre est ouverte cest que  l utilisateur est à l interieur
 const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user')));
 
+
 export const userService = {
+    //  propriété d'accès pour obtenir la valeur actuelle de l'utilisateur.
     user: userSubject.asObservable(),
+    // methode pour interagir avec l api
     get userValue() { return userSubject.value },
     login,
     logout,
@@ -29,24 +32,27 @@ async function login(email, password) {
     const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { email, password });
 
     
-// publier l'utilisateur auprès des abonnés et le stocker dans le stockage local pour rester connecté entre les actualisations de la page
+// met à jour le sujet observable userSubject avec les informations de l'utilisateur et stocke l'utilisateur dans le localStorage
     userSubject.next(user);
     localStorage.setItem('user', JSON.stringify(user));
 }
 
 // quand l'utilisateur se deconnecte il le renvoie a la page d'accueil
 function logout() {
+    // methode qui efface les alerte
     alertService.clear();
-    // remove user from local storage, publish null to user subscribers and redirect to login page
+    // retire l'utilisateur du stockage local, publie une valeur null et redirige vers la page de connexion
     localStorage.removeItem('user');
     userSubject.next(null);
     Router.push('/');
 }
 
 async function register(user) {
+    // requete post pour enregistrer un utilisateur
     await fetchWrapper.post(`${baseUrl}/register`, user);
 }
 
+// requête GET pour obtenir tous les utilisateurs
 async function getAll() {
     return await fetchWrapper.get(baseUrl);
 }
@@ -56,9 +62,10 @@ async function getById(id) {
 }
 
 async function update(id, params) {
+    // mettre à jour les informations de l'utilisateur avec les nouveaux paramètres fournis
     await fetchWrapper.put(`${baseUrl}/${id}`, params);
 
-    // update stored user if the logged in user updated their own record
+    // 
     if (id === userSubject.value.id) {
         // copie les valeurs et les parametre et on modifie l'user dans le localstorage pour lui passer les nouvelles valeur
         const user = { ...userSubject.value, ...params };
@@ -69,11 +76,11 @@ async function update(id, params) {
     }
 }
 
-// prefixed with underscored because delete is a reserved word in javascript
+// requete qui supprime l utilisateur par son id
 async function _delete(id) {
     await fetchWrapper.delete(`${baseUrl}/${id}`);
 
-    // auto logout if the logged in user deleted their own record
+    // Si l'utilisateur supprimé est l'utilisateur actuellement connecté, elle effectue également une déconnexion automatique.
     if (id === userSubject.value.id) {
         logout();
     }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // effectuez toutes les importations sans point '.' préfixe par rapport à l'url de base
+    // le base url est defini sur point "." pour ne pas utiliser les (point ../../)lors des imports
     "baseUrl": "."
   }
 }

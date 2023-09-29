@@ -9,11 +9,12 @@ function Nav() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
+        // effectuer des opérations de nettoyage et de mise à jour lorsque le composant est monté.  s'abonner à des changements dans l'objet user du service userService et met à jour l'état local user
         const subscription = userService.user.subscribe(x => setUser(x));
         return () => subscription.unsubscribe();
     }, []);
 
-    // only show nav when logged in
+    // montre la barre de navigation si l utilisateur est connecte
     if (!user) return null;
 
     return (

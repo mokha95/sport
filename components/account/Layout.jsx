@@ -5,6 +5,7 @@ import { userService } from 'services';
 
 export { Layout };
 
+// contient le code commun pour toutes les pages du /pages/account du dossier
 function Layout({ children }) {
     const router = useRouter();
 // si l utilisateur est connecter on le renvoie  a la page home

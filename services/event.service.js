@@ -1,6 +1,6 @@
 
 import getConfig from 'next/config';
-
+// getconfig est utilise pour la configuration de l'application, de l'URL de lApi
 
 import { fetchWrapper } from 'helpers';
 
@@ -21,15 +21,15 @@ export const eventService = {
 async function getVarious() {
     return await fetchWrapper.get(`${baseUrl}/various`);
   }
-
+    // requete post pour enregistrer un Event
 async function register(event) {
     await fetchWrapper.post(`${baseUrl}/register`, event);
 }
-
+// requête GET pour obtenir tous les events
 async function getAll() {
     return await fetchWrapper.get(baseUrl);
 }
-
+// selectionne un event par son id
 async function getById(id) {
     return await fetchWrapper.get(`${baseUrl}/${id}`);
 }

@@ -12,3 +12,7 @@
 .liste {
   padding: 0;
 }
+
+.nav-item a{
+  font-size: 80px;
+}

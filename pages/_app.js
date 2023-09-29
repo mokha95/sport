@@ -10,6 +10,7 @@ import { Nav, Alert } from 'components';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
+// le fichier app permet de créer toutes les pages du site
 export default App;
 
 function App({ Component, pageProps }) {

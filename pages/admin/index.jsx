@@ -15,7 +15,7 @@ function Index() {
   }, []);
 
   return (
-    <div className="p-4">
+    <div className="p-4 adminStyle">
       <div className="container">
         <p>Tableau de Bord</p>
 

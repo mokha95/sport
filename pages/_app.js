@@ -39,7 +39,6 @@ function App({ Component, pageProps }) {
 
     function authCheck(url) {
 
-        // redirect to login page if accessing a private page and not logged in 
         setUser(userService.userValue);
         // toute les pages que peut visiter l'utilisateur sans  etre connecter
         const publicPaths = ['/account/login', '/account/register', '/', '/monclub', '/abonnement'];
@@ -62,6 +61,7 @@ function App({ Component, pageProps }) {
         <>
             <Head>
                 <title>Mpower Gym</title>
+                
             </Head>
 
                 <Header />

@@ -14,7 +14,7 @@ Small =   ≥576px  md
 Medium =   ≥768px  md
 Large =   ≥992px  lg
 Extra large =   ≥1200px  xl
-
+ style global
 */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 

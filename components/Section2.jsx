@@ -98,7 +98,7 @@ const Section2 = () => {
                   confiance en vous, Mpower Gym et ses membres vous attendent
                   pour passer de bons moments bénéfiques à votre corps et à
                   votre esprit ! Nous faisons de chacune de nos séances
-                  sportives un moment d’échanges, de bienveillance et de
+                  sportives un moment d&apos;échanges, de bienveillance et de
                   motivation pour donner le meilleur de nous et de vous !
                   <br />
                   Cet espace professionnel constitue une source d&apos;informations et de conseils complets pour les membres, favorisant ainsi leur engagement et leur réussite à long terme.

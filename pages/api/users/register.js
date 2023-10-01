@@ -1,5 +1,6 @@
 import { apiHandler, usersRepo } from 'helpers/api';
 
+// enregistrer un nouvel utilisateur en repondant a une requette http post
 export default apiHandler({
     post: register
 });

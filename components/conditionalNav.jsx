@@ -9,6 +9,7 @@ const ConditionalNav = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // s abonne a l'observable userservice a chaque mise a jour , le setter() met a jour l utilisateur
       const subscription = userService.user.subscribe(x => setUser(x));
       return () => subscription.unsubscribe();
   }, []);

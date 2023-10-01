@@ -9,7 +9,7 @@ export default Index;
 
 function Index() {
     const [users, setUsers] = useState(null);
-// recupere tout les utilisateurs
+// recupere tout les utilisateurs et les met a jours
     useEffect(() => {
         userService.getAll().then(x => setUsers(x));
     }, []);
@@ -54,6 +54,7 @@ function Index() {
                             </td>
                         </tr>
                     )}
+                    {/* si l utilisateur est faux affiche le spinner */}
                     {!users &&
                         <tr>
                             <td colSpan="4">
@@ -61,6 +62,7 @@ function Index() {
                             </td>
                         </tr>
                     }
+                    {/* si il n ya pas dutilisateur affiche le message */}
                     {users && !users.length &&
                         <tr>
                             <td colSpan="4" className="text-center">

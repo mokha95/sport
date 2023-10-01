@@ -65,6 +65,10 @@ const abonnement = () => {
 
               <p>Plateforme tonicité et minceur</p>
 
+              <p>Suivi des Progrès</p>
+
+              <p>Balance d&apos;analyse corporelle</p>
+
               <p>Un sac de sport offert</p>
             </div>
           </div>

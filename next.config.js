@@ -1,3 +1,11 @@
+// fichier de configuration Next.js définit les variables de configuration globales disponibles pour les composants de l'application
+// Le apiUrlest utilisé par le service utilisateur pour envoyer des requêtes HTTP à l'API.
+
+// La secretpropriété est utilisée pour signer et vérifier les jetons JWT pour l'authentification
+
+
+// serverRuntimeConfigles variables ne sont disponibles que pour l'API côté serveur, tandis que publicRuntimeConfigles variables sont disponibles pour l'API et l'application client React.
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -23,4 +31,4 @@ const nextConfig = {
 
 module.exports = nextConfig
 
-// 
+

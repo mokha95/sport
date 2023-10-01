@@ -46,6 +46,14 @@ function SectionEvent() {
                 </div>
               ))}
           </div>
+          <div className="btn2 mt-2 ">
+            <Link href="/events/listeEvents">
+             {" "}
+            <button className="btnGlobal mt-2">
+            Voir tous nos événements
+           </button>
+          </Link>
+          </div>
         </div>
       </article>
     </>

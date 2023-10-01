@@ -9,6 +9,9 @@ import { alertService } from './alert.service';
 // accés a l'api (gestion des utilisateurs)
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
+
+// userSubject est un BehaviorSubject qui maintient l'état actuel de l'utilisateur. Il est initialisé avec la valeur stockée dans le localStorage.
+
 // stocke l etat de l utilisateur si la fenetre est ouverte cest que  l utilisateur est à l interieur
 const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user')));
 
@@ -27,12 +30,13 @@ export const userService = {
     delete: _delete
 };
 
-// (utilisateur enregistrer dans le localstorage)
+// effectue une methode post pour authentifier un utilisateur
 async function login(email, password) {
     const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { email, password });
 
     
 // met à jour le sujet observable userSubject avec les informations de l'utilisateur et stocke l'utilisateur dans le localStorage
+// convertit une variable javascript en string JSON
     userSubject.next(user);
     localStorage.setItem('user', JSON.stringify(user));
 }
@@ -65,7 +69,7 @@ async function update(id, params) {
     // mettre à jour les informations de l'utilisateur avec les nouveaux paramètres fournis
     await fetchWrapper.put(`${baseUrl}/${id}`, params);
 
-    // 
+    // veifie si l'id de lutilisateur mis a jour et = à l utilisateur actuellement connecte
     if (id === userSubject.value.id) {
         // copie les valeurs et les parametre et on modifie l'user dans le localstorage pour lui passer les nouvelles valeur
         const user = { ...userSubject.value, ...params };

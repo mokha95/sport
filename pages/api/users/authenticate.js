@@ -5,6 +5,7 @@ export default apiHandler({
     post: authenticate
 });
 
+// gère les requêtes POST pour l'authentification.
 async function authenticate(req, res) {
     const user = await usersRepo.authenticate(req.body);
     return res.status(200).json(user);

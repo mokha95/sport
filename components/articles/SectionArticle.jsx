@@ -47,6 +47,14 @@ function SectionArticle() {
                 </div>
               ))}
           </div>
+            <div className="btn2 mt-2 ">
+            <Link href="/articles/listeArticles">
+             {" "}
+            <button className="btnGlobal mt-2">
+            Voir tous nos articles
+           </button>
+          </Link>
+          </div>
         </div>
       </article>
     </>

@@ -5,6 +5,7 @@ import { Layout, ViewArticle } from "components/articles";
 import { Spinner } from "components";
 import { articleService, alertService } from "services";
 
+// ce composant récupère l'ID de l'article à partir de l'URL, utilise ce paramètre pour récupérer les détails de l'article via le service, puis affiche les détails dans une mise en page (Layout). Si les détails ne sont pas encore chargés, un composant de chargement (Spinner) est affiché.
 export default Article;
 
 function Article() {
@@ -42,3 +43,4 @@ function Article() {
         )
       }}
 }
+

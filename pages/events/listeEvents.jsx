@@ -25,7 +25,7 @@ function ListeEvents() {
         <div className={styles.actu}>
           <h2 className="text-center">ACTUALITÉS MPOWER GYM</h2>
 
-          <p className="mt-3 text-center">DÉCOUVREZ NOS DERNIERS EVENEMENTS A VENIR</p>
+          <p className="mt-3 text-center">DÉCOUVREZ NOS EVENEMENTS </p>
           <div className={styles.trait}></div>
         </div>
         <div className="container mt-5   ">

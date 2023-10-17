@@ -12,7 +12,7 @@ const monclub = () => {
           </h1>
           <div className=" ">
             <img
-              src="img/groupe2.jpg"
+              src="img/sportenGroupe (1).jpg"
               alt="cours collectif"
               className="img-fluid"
             />
@@ -20,11 +20,11 @@ const monclub = () => {
           <h2 className=" pt-5 ">Chers passionnés de fitness</h2>
           <p className="ClubText pt-2  ">
             <span className="textFitness"> Venez nous rejoindre </span> alors
-            que nous apportons l&apos;enthousiasme et la vitalité de Mpower Gym en
-            plein air. Nos séances d&apos;entraînement en plein air sont conçues pour
-            vous offrir une nouvelle perspective sur le fitness et vous
-            reconnecter avec la nature tout en transpirant et en vous amusant.{" "}
-            <br />
+            que nous apportons l&apos;enthousiasme et la vitalité de Mpower Gym
+            en plein air. Nos séances d&apos;entraînement en plein air sont
+            conçues pour vous offrir une nouvelle perspective sur le fitness et
+            vous reconnecter avec la nature tout en transpirant et en vous
+            amusant. <br />
             <br />
             <span className="textFitness">Sous le ciel ouvert, </span> vous
             serez guidé par nos instructeurs dévoués à travers des séquences
@@ -36,8 +36,8 @@ const monclub = () => {
             <br />
             <span className="textFitness px-2 ">
               Que vous soyez un adepte du jogging
-            </span> 
-             un amateur de HIIT ou simplement à la recherche d&apos;une manière
+            </span>
+            un amateur de HIIT ou simplement à la recherche d&apos;une manière
             amusante de rester actif, nos Cours en Plein Air sont adaptés à tous
             les niveaux de forme physique. Peu importe votre expérience,
             préparez-vous à vous sentir revitalisé et à vivre une expérience
@@ -48,8 +48,8 @@ const monclub = () => {
             : votre bouteille d&apos;eau et votre motivation pour rejoindre la
             communauté Mpower dans une aventure fitness qui vous emmènera hors
             des sentiers battus. Les Cours en Plein Air sont également une
-            excellente occasion de rencontrer d&apos;autres membres, de partager des
-            objectifs et de créer des souvenirs ensemble.
+            excellente occasion de rencontrer d&apos;autres membres, de partager
+            des objectifs et de créer des souvenirs ensemble.
             <br />
             <br />
             <span className="textFitness">
@@ -71,13 +71,10 @@ const monclub = () => {
           </p>
 
           <SectionEvent />
-
         </div>
         <br />
         <br />
       </div>
-
-   
     </>
   );
 };

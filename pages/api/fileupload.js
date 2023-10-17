@@ -2,6 +2,9 @@ import formidable from "formidable";
 import path from "path";
 import fs from "fs/promises";
 
+// gerer les telechargement d'iamage
+// formidable permet de faciliter la manip de formulaire et gérer le telechargement des fichiers
+// Importe le module "fs/promises" pour effectuer des opérations asynchrones sur le système de fichiers.
 export const config = {
   api: {
     bodyParser: false,

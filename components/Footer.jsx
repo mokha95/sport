@@ -50,7 +50,7 @@ const Footer = () => {
                   href="/contacts/add"
                   className="btn btn-sm boutons-footer mb-2 liensFooterAdmin "
                 >
-                  Contacter GymPower
+                  Contacter MpowerGym
                 </Link>
               </li>
               <li className="nav-item">

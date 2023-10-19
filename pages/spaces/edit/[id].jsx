@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { Layout, AddEditSpace } from "components/horaires";
+import { Layout, AddEditSpace } from "components/spaces";
 import { Spinner } from "components";
 import { spaceService, alertService } from "services";
 

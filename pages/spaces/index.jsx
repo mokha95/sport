@@ -84,7 +84,7 @@ function Index() {
           {spaces && !spaces.length && (
             <tr>
               <td colSpan="4" className="text-center">
-                <div className="p-2">Pas d&apos;spaces à afficher</div>
+                <div className="p-2">Pas d&apos;espaces à afficher</div>
               </td>
             </tr>
           )}

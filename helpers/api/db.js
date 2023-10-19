@@ -155,6 +155,7 @@ function equipmentModel(sequelize) {
 function trainingModel(sequelize) {
   const attributes = {
     title: { type: DataTypes.STRING, allowNull: false },
+    price: { type: DataTypes.FLOAT, allowNull: false },
   };
   return sequelize.define("Training", attributes);
 }

@@ -1,6 +1,14 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { userService } from "services";
 
-const abonnement = () => {
+const Abonnement = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // verifier si il est inscrit
+    const subscription = userService.user.subscribe((x) => setUser(x));
+    return () => subscription.unsubscribe();
+  }, []);
   return (
     <>
       <div className="container  pageAbonnement">
@@ -10,11 +18,11 @@ const abonnement = () => {
           TROUVE FACILEMENT L&apos;ABONNEMENT QUI TE CONVIENT.
         </h1>
         <p className="txtAbonnement text-center pt-4">
-          En devenant membre de Mpower Gym, vous bénéficiez d&apos;un accès illimité
-          à nos installations modernes et ultramodernes. Des équipements dernier
-          cri aux espaces d&apos;entraînement spécialement conçus, notre salle de
-          sport offre tout ce dont vous avez besoin pour atteindre vos objectifs
-          de fitness.
+          En devenant membre de Mpower Gym, vous bénéficiez d&apos;un accès
+          illimité à nos installations modernes et ultramodernes. Des
+          équipements dernier cri aux espaces d&apos;entraînement spécialement
+          conçus, notre salle de sport offre tout ce dont vous avez besoin pour
+          atteindre vos objectifs de fitness.
         </p>
         <h2 className="pt-5 text-center">NOS OFFRES AVEC ENGAGEMENT</h2>
       </div>
@@ -43,6 +51,11 @@ const abonnement = () => {
 
               <p>Un sac de sport offert</p>
             </div>
+            {user ? (
+              <button>S&apos;abonner</button>
+            ) : (
+              <button>S&apos;inscrire</button>
+            )}
           </div>
           {/*  */}
           <div className="cardTarifs col-lg-4   ">
@@ -121,10 +134,8 @@ const abonnement = () => {
           </div>
         </div>
       </div>
-
-
     </>
   );
 };
 
-export default abonnement;
+export default Abonnement;

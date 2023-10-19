@@ -18,7 +18,7 @@ function AddEditSpace(props) {
   // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
   // form validation rules
   const validationSchema = Yup.object().shape({
-    jour: Yup.string().required("Un contenu est requis"),
+    name: Yup.string().required("Un contenu est requis"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
 
@@ -44,7 +44,7 @@ function AddEditSpace(props) {
         message = "espace modifié";
       } else {
         await spaceService.register(data);
-        message = "epace ajouté";
+        message = "espace ajouté";
       }
 
       // redirect to user list with success message
@@ -60,91 +60,17 @@ function AddEditSpace(props) {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="row">
         <div className="mb-3 col">
-          <label className="form-label">Jour</label>
+          <label className="form-label">Nom</label>
           <input
-            name="Jour"
+            name="name"
             type="text"
-            {...register("jour")}
-            className={`form-control ${errors.jour ? "is-invalid" : ""}`}
+            {...register("name")}
+            className={`form-control ${errors.name ? "is-invalid" : ""}`}
           />
-          <div className="invalid-feedback">{errors.jour?.message}</div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="mb-3 col">
-          <label className="form-label">debut matin</label>
-          <input
-            name="debut_matin"
-            {...register("debut_matin")}
-            className={`form-control ${errors.debut_matin ? "is-invalid" : ""}`}
-          />
-          <div className="invalid-feedback">{errors.debut_matin?.message}</div>
-        </div>
-        <div className="mb-3 col">
-          <label className="form-label">fin matin</label>
-          <input
-            name="fin_matin"
-            type="text"
-            {...register("fin_matin")}
-            className={`form-control ${errors.fin_matin ? "is-invalid" : ""}`}
-          />
-          <div className="invalid-feedback">{errors.fin_matin?.message}</div>
+          <div className="invalid-feedback">{errors.name?.message}</div>
         </div>
       </div>
 
-      <div className="row">
-        <div className="mb-3 col">
-          <label className="form-label">debut apres midi</label>
-          <input
-            name="debut_apresmidi"
-            type="text"
-            {...register("debut_apresmidi")}
-            className={`form-control ${
-              errors.debut_apresmidi ? "is-invalid" : ""
-            }`}
-          />
-          <div className="invalid-feedback">
-            {errors.debut_apresmidi?.message}
-          </div>
-        </div>
-        <div className="mb-3 col">
-          <label className="form-label">fin apres midi</label>
-          <input
-            name="fin_apresmidi"
-            {...register("fin_apresmidi")}
-            className={`form-control ${
-              errors.fin_apresmidi ? "is-invalid" : ""
-            }`}
-          />
-          <div className="invalid-feedback">
-            {errors.fin_apresmidi?.message}
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="mb-3 col">
-          <label className="form-label">fermeture matin</label>
-          <input
-            name="fermeture_matin"
-            {...register("fermeture_matin")}
-            className={`form-control ${
-              errors.fermeture_matin ? "is-invalid" : ""
-            }`}
-          />
-          <div className="invalid-feedback">
-            {errors.fermeture_matin?.message}
-          </div>
-        </div>
-        <div className="mb-3 col">
-          <label className="form-label"> fermeture apres midi</label>
-          <input
-            name="fermeture_apresmidi"
-            {...register("fermeture_apresmidi")}
-            className={`form-control ${errors.apresmidi ? "is-invalid" : ""}`}
-          />
-          <div className="invalid-feedback">{errors.apresmidi?.message}</div>
-        </div>
-      </div>
       <div className="mb-3">
         <button
           type="submit"

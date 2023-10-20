@@ -40,6 +40,11 @@ function Index() {
                 Gérer les espaces
               </Link>
             </p>
+            <p>
+              <Link href="/equipments" className="nav-link ">
+                Gérer les équipements
+              </Link>
+            </p>
           </>
         ) : (
           ""

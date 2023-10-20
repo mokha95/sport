@@ -45,6 +45,11 @@ function Index() {
                 Gérer les équipements
               </Link>
             </p>
+            <p>
+              <Link href="/trainings" className="nav-link ">
+                Gérer les entrainement
+              </Link>
+            </p>
           </>
         ) : (
           ""

@@ -3,10 +3,16 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-
+import { useState, useEffect } from "react";
 // l utilisateur peut ajouter un entrainent
 
-import { alertService, trainingService } from "services";
+import {
+  alertService,
+  trainingService,
+  spaceService,
+  equipmentService,
+  userService,
+} from "services";
 // composant AddEdit est utilisé à la fois pour ajouter et modifier des utilisateurs, il contient un formulaire construit avec la bibliothèque React Hook Form et est utilisé par la page d'ajout d'utilisateur et la page de modification d'utilisateur .
 
 export { AddEditTraining };
@@ -15,10 +21,29 @@ function AddEditTraining(props) {
   const training = props?.training;
   const router = useRouter();
 
+  const [spaces, setSpaces] = useState([]);
+  const [equipments, setEquipments] = useState([]);
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    spaceService.getAll().then((x) => setSpaces(x));
+    equipmentService.getAll().then((x) => setEquipments(x));
+    userService.getAll().then((users) => {
+      const filteredUsers = users.filter(
+        (user) => user.roles === "EMPLOYEE" || user.roles === "ADMIN"
+      );
+      setEmployees(filteredUsers);
+    });
+  }, []);
+
   // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
   // form validation rules
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Un contenu est requis"),
+    title: Yup.string().required("Un contenu est requis"),
+    price: Yup.number().required("Un contenu est requis"),
+    spaceId: Yup.number().required("Un contenu est requis"),
+    equipmentId: Yup.number().required("Un contenu est requis"),
+    employeeId: Yup.number().required("Un contenu est requis"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
 
@@ -62,12 +87,79 @@ function AddEditTraining(props) {
         <div className="mb-3 col">
           <label className="form-label">Nom</label>
           <input
-            name="name"
+            name="title"
             type="text"
-            {...register("name")}
-            className={`form-control ${errors.name ? "is-invalid" : ""}`}
+            {...register("title")}
+            className={`form-control ${errors.title ? "is-invalid" : ""}`}
           />
-          <div className="invalid-feedback">{errors.name?.message}</div>
+          <div className="invalid-feedback">{errors.title?.message}</div>
+        </div>
+
+        <div className="mb-3 col">
+          <label className="form-label">Prix</label>
+          <input
+            name="price"
+            type="text"
+            {...register("price")}
+            className={`form-control ${errors.price ? "is-invalid" : ""}`}
+          />
+          <div className="invalid-feedback">{errors.price?.message}</div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="mb-3 col">
+          <label className="form-label">Espace</label>
+          <select
+            name="spaceId"
+            {...register("spaceId")}
+            className={`form-control ${errors.spaceId ? "is-invalid" : ""}`}
+          >
+            <option value=""></option>
+            {spaces &&
+              spaces.map((space) => (
+                <option value={space.id} key={space.id}>
+                  {space.name}
+                </option>
+              ))}
+          </select>
+          <div className="invalid-feedback">{errors.spaceId?.message}</div>
+        </div>
+
+        <div className="mb-3 col">
+          <label className="form-label">Equipement</label>
+          <select
+            name="equipmentId"
+            {...register("equipmentId")}
+            className={`form-control ${errors.equipmentId ? "is-invalid" : ""}`}
+          >
+            <option value=""></option>
+            {equipments &&
+              equipments.map((equipment) => (
+                <option value={equipment.id} key={equipment.id}>
+                  {equipment.name}
+                </option>
+              ))}
+          </select>
+          <div className="invalid-feedback">{errors.equipmentId?.message}</div>
+        </div>
+
+        <div className="mb-3 col">
+          <label className="form-label">Instructeur</label>
+          <select
+            name="employeeId"
+            {...register("employeeId")}
+            className={`form-control ${errors.employeeId ? "is-invalid" : ""}`}
+          >
+            <option value=""></option>
+            {employees &&
+              employees.map((employee) => (
+                <option value={employee.id} key={employee.id}>
+                  {employee.lastName}
+                </option>
+              ))}
+          </select>
+          <div className="invalid-feedback">{errors.employeeId?.message}</div>
         </div>
       </div>
 

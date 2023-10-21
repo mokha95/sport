@@ -9,23 +9,23 @@ export const trainingsRepo = {
 };
 
 // requete avec des methode sequelize sur le model training
-// onction asynchrone getAll qui utilise Sequelize pour récupérer tous les etrainings en appelant db.Space.findAll().
+// onction asynchrone getAll qui utilise Sequelize pour récupérer tous les etrainings en appelant db.Training.findAll().
 async function getAll() {
-  return await db.Space.findAll();
+  return await db.Training.findAll();
 }
-// fonction asynchrone getById qui utilise Sequelize pour récupérer un etraining par son identifiant en appelant db.Space.findByPk(id).
+// fonction asynchrone getById qui utilise Sequelize pour récupérer un etraining par son identifiant en appelant db.Training.findByPk(id).
 async function getById(id) {
-  return await db.Space.findByPk(id);
+  return await db.Training.findByPk(id);
 }
 
 async function create(params) {
-  const Space = new db.Space(params);
+  const Training = new db.Training(params);
   // save training
-  await Space.save();
+  await Training.save();
 }
 
 async function update(id, params) {
-  const training = await db.Space.findByPk(id);
+  const training = await db.Training.findByPk(id);
 
   // validate
   if (!training) throw "L Entrainement n&apos;existe pas";
@@ -37,7 +37,7 @@ async function update(id, params) {
 }
 
 async function _delete(id) {
-  const training = await db.Space.findByPk(id);
+  const training = await db.Training.findByPk(id);
   if (!training) throw "L Entrainement n&apos;existe pas";
 
   // supprime l evenement

@@ -48,7 +48,7 @@ function Index() {
             trainings.map((training) => (
               <tr key={training.id}>
                 <td>{training.id}</td>
-                <td>{training.name}</td>
+                <td>{training.title}</td>
                 <td>{training.price}</td>
                 <td style={{ whiteSpace: "nowrap" }}>
                   <Link

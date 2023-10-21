@@ -15,10 +15,30 @@ function AddContact() {
   // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
   // form validation rules
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("Le prenom est requis"),
-    lastName: Yup.string().required("Un nom est requis"),
-    numero: Yup.string().required("Une numero est requise"),
-    email: Yup.string().required("Email est requis"),
+    firstName: Yup.string()
+      .matches(
+        /^[A-Za-z\s]+$/,
+        "Le prenom doit contenir uniquement des lettres et des espaces"
+      )
+      .required("Le prenom est requis"),
+    lastName: Yup.string()
+      .matches(
+        /^[A-Za-z\s]+$/,
+        "Un nom doit contenir uniquement des lettres et des espaces"
+      )
+      .required("Un nom est requis"),
+    numero: Yup.string()
+      .matches(
+        /^[0-9]{10}$/,
+        "Le numéro de téléphone doit contenir 10 chiffres"
+      )
+      .required("Une numero est requise"),
+    email: Yup.string()
+      .matches(
+        /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
+        "Adresse e-mail non valide"
+      )
+      .required("Email est requis"),
     message: Yup.string().required("Un contenu est requis"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
@@ -102,7 +122,7 @@ function AddContact() {
             type="text"
             {...register("message")}
             className={`form-control ${errors.message ? "is-invalid" : ""}`}
-            ></textarea>
+          ></textarea>
           <div className="invalid-feedback">{errors.message?.message}</div>
         </div>
       </div>

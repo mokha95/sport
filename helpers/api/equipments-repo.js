@@ -1,6 +1,6 @@
 import { db } from "helpers/api";
 // expose un objet equipmentRepo qui offre des méthodes pour interagir avec la base de données, en utilisant Sequelize pour effectuer des opérations CRUD sur l'entité "equipment".
-export const equipmentRepo = {
+export const equipmentRepos = {
   getAll,
   getById,
   create,

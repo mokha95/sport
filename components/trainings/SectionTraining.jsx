@@ -31,7 +31,7 @@ function SectionTraining() {
             {trainings &&
               trainings.map((training) => (
                 <div
-                  className="cardTarifs col-lg-4 col-md-5 col-sm-8 col-9 "
+                  className="cardTarifs col-xl-3 col-lg-4 col-md-5 col-sm-8 col-9 "
                   key={training.id}
                 >
                   <div className="typeAbonnement p-3">

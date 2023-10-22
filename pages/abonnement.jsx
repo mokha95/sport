@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react";
-import { userService } from "services";
+import { SectionTraining } from "components/trainings";
+import styles from "styles/article.module.css";
 
 const Abonnement = () => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    // verifier si il est inscrit
-    const subscription = userService.user.subscribe((x) => setUser(x));
-    return () => subscription.unsubscribe();
-  }, []);
   return (
     <>
       <div className="container  pageAbonnement">
@@ -29,89 +23,8 @@ const Abonnement = () => {
 
       <div className="cardAbonnement container  ">
         <div className=" carteAbonnement d-flex text-center  justify-content-center ">
-          <div className="cardTarifs col-lg-4    ">
-            <div className="typeAbonnement p-3">
-              <p className="m-0">Classic</p>
-            </div>
-            <div className="prixAbonnement pt-4">
-              <p className="fw-bold">
-                <span className="prix"> 29.99€ </span> /4 semaines*
-              </p>
-            </div>
-            <div>
-              <p>
-                Les 4 premières semaines à{" "}
-                <span className="prixCarte">19€</span>{" "}
-              </p>
-            </div>
-            <div>
-              <p>Frais d&apos;adhésion de 25€</p>
-
-              <p>Plateforme tonicité et minceur</p>
-
-              <p>Un sac de sport offert</p>
-            </div>
-            {user ? (
-              <button>S&apos;abonner</button>
-            ) : (
-              <button>S&apos;inscrire</button>
-            )}
-          </div>
+          <SectionTraining />
           {/*  */}
-          <div className="cardTarifs col-lg-4   ">
-            <div className="typeAbonnement p-3 ">
-              <p className="m-0">essentiel </p>
-            </div>
-            <div className="prixAbonnement pt-4">
-              <p className="fw-bold">
-                <span className="prix"> 35.99€ </span> /4 semaines*
-              </p>
-            </div>
-            <div>
-              <p>
-                Les 4 premières semaines à{" "}
-                <span className="prixCarte">19€</span>{" "}
-              </p>
-            </div>
-            <div>
-              <p>Frais d&apos;adhésion de 25€</p>
-
-              <p>Plateforme tonicité et minceur</p>
-
-              <p>Suivi des Progrès</p>
-
-              <p>Balance d&apos;analyse corporelle</p>
-
-              <p>Un sac de sport offert</p>
-            </div>
-          </div>
-
-          <div className="cardTarifs col-lg-4   ">
-            <div className="typeAbonnement p-3">
-              <p className="m-0">Premium </p>
-            </div>
-            <div className="prixAbonnement pt-4">
-              <p className="fw-bold">
-                <span className="prix"> 40.99€ </span> /4 semaines*
-              </p>
-            </div>
-            <div>
-              <p>
-                Les 4 premières semaines à{" "}
-                <span className="prixCarte">19€</span>{" "}
-              </p>
-            </div>
-            <div>
-              <p>Frais d&apos;adhésion de 25€</p>
-
-              <p>Plateforme tonicité et minceur</p>
-              <p>Balance d&apos;analyse corporelle</p>
-              <p>Coaching en ligne</p>
-              <p>Entraînement avec un invité</p>
-              <p></p>
-              <p></p>
-            </div>
-          </div>
         </div>
       </div>
 

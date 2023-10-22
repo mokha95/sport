@@ -1,4 +1,4 @@
-import { articleService } from "services";
+import { trainingService, userService } from "services";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "styles/article.module.css";
@@ -7,8 +7,13 @@ export { SectionTraining };
 
 function SectionTraining() {
   const [trainings, setTrainings] = useState(null);
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
-    articleService.getAll().then((x) => setTrainings(x));
+    trainingService.getAll().then((x) => setTrainings(x));
+    // verifier si il est inscrit
+    const subscription = userService.user.subscribe((x) => setUser(x));
+    return () => subscription.unsubscribe();
   }, []);
 
   return (
@@ -20,17 +25,21 @@ function SectionTraining() {
           <p className="mt-3 text-center">DÉCOUVREZ NOS DERNIERS ARTICLES</p>
           <div className={styles.trait}></div>
         </div>
-        <div className="container mt-5   ">
-          <div className="row ">
-            {articles &&
-              articles.map((article) => (
-                <div className="cardTarifs col-lg-4" key={article.id}>
+        {/* abonnement */}
+        <div className="container mt-5 ">
+          <div className="row justify-content-center gap-5 carteContainerAbonnement ">
+            {trainings &&
+              trainings.map((training) => (
+                <div
+                  className="cardTarifs col-lg-4 col-md-5 col-sm-8 col-9 "
+                  key={training.id}
+                >
                   <div className="typeAbonnement p-3">
-                    <p className="m-0">{article.title}</p>
+                    <p className="m-0">{training.title}</p>
                   </div>
                   <div className="prixAbonnement pt-4">
                     <p className="fw-bold">
-                      <span className="prix"> {article.price}€ </span> /4
+                      <span className="prix"> {training.price}€ </span> /4
                       semaines*
                     </p>
                   </div>
@@ -38,7 +47,7 @@ function SectionTraining() {
                     <p>
                       Les 4 premières semaines à{" "}
                       <span className="prixCarte">
-                        {article.price - 10.99}€
+                        {training.price - 10.99}€
                       </span>{" "}
                     </p>
                   </div>

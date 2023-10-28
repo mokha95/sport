@@ -15,7 +15,7 @@ export const trainingService = {
   update,
   delete: _delete,
 };
-// quand tu veux enreigistrer un training il faut faire un fetch avec la methode post sur l adresse baseurlregister avec comme parametre article
+// quand tu veux enreigistrer un training il faut faire un fetch avec la methode post sur l adresse baseurlregister avec comme parametre training
 async function register(training) {
   await fetchWrapper.post(`${baseUrl}/register`, training);
 }

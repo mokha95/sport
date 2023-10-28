@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import { SectionTraining } from "components/trainings";
-import styles from "styles/article.module.css";
 
 const Abonnement = () => {
   return (

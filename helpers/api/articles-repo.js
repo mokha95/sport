@@ -1,57 +1,53 @@
-
-import { db } from 'helpers/api';
-
-
+import { db } from "helpers/api";
 
 export const articlesRepo = {
-
-    getAll,
-    getById,
-    create,
-    update,
-    delete: _delete,
-    getVarious,
+  getAll,
+  getById,
+  create,
+  update,
+  delete: _delete,
+  getVarious,
 };
 
+// récupère les trois articles les plus récents de la table "Article" de la base de données, en les triant par date de création décroissante
 async function getVarious() {
-    return await db.Article.findAll({
-      order: [["createdAt", "DESC"]],
-      limit: 3,
-    });
-  }
+  return await db.Article.findAll({
+    order: [["createdAt", "DESC"]],
+    limit: 3,
+  });
+}
 
 // requete avec des methode sequelize sur le model article
 async function getAll() {
-    return await db.Article.findAll();
+  return await db.Article.findAll();
 }
 
 async function getById(id) {
-    return await db.Article.findByPk(id);
+  return await db.Article.findByPk(id);
 }
 
 async function create(params) {
-    
-      const Article = new db.Article(params);
-    // save article
-    await Article.save();
+  const Article = new db.Article(params);
+  // save article
+  await Article.save();
 }
 // verification dans la base de donnée si l article existe pour ensuite le modifier
 async function update(id, params) {
-    const article = await db.Article.findByPk(id);
+  const article = await db.Article.findByPk(id);
 
-    // validate
-    if (!article) throw 'Article n&apos;existe pas';
+  // validate
+  if (!article) throw "Article n&apos;existe pas";
 
-    // copy params properties to user
-    Object.assign(article, params);
+  // copy params properties to user
+  Object.assign(article, params);
 
-    await article.save();
+  await article.save();
 }
 // verification dans la base de donnée si l article existe si il existe il le supprime
 async function _delete(id) {
-    const article = await db.Article.findByPk(id);
-    if (!article) throw 'Article n&apos;existe pas';
+  const article = await db.Article.findByPk(id);
+  if (!article) throw "Article n&apos;existe pas";
 
-    // supprime article
-    await article.destroy();
+  // supprime article
+  await article.destroy();
 }

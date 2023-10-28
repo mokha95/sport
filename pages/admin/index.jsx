@@ -66,6 +66,17 @@ function Index() {
                 Gérer les evenements
               </Link>
             </p>
+            <p>
+              <Link href="/contacts" className="nav-link ">
+                Gérer les contacts
+              </Link>
+            </p>
+
+            <p>
+              <Link href="/equipments" className="nav-link ">
+                Gérer les équipements
+              </Link>
+            </p>
           </>
         ) : (
           <>

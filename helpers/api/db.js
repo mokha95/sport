@@ -14,7 +14,7 @@ export const db = {
 // creation des tables dans la base de donnees
 // initialize db and models, called on first api request from /helpers/api/api-handler.js
 async function initialize() {
-  // create db if it doesn't already exist
+  // creation de la database extrait les informations de configuration de la base de données à partir de l'objet dbConfig stocké dans serverRuntimeConfig
   const { host, port, user, password, database } = serverRuntimeConfig.dbConfig;
   const connection = await mysql.createConnection({
     host,
@@ -24,9 +24,15 @@ async function initialize() {
   });
   await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
 
-  // connect to db
+  // connect to db , gérer certaines erreurs, comme les deadlocks.
   const sequelize = new Sequelize(database, user, password, {
     dialect: "mysql",
+    retry: {
+      match: [/Deadlock/i],
+      max: 3, // Maximum rety 3 times
+      backoffBase: 1000, // Initial backoff duration in ms. Default: 100,
+      backoffExponent: 1.5, // Exponent to increase backoff each try. Default: 1.1
+    },
   });
 
   // initialise les modèles  ajoute à l'objet de base de données
@@ -138,6 +144,7 @@ function contactModel(sequelize) {
   return sequelize.define("Contact", attributes);
 }
 
+// model espace
 function spaceModel(sequelize) {
   const attributes = {
     name: { type: DataTypes.STRING, allowNull: false },
@@ -145,6 +152,7 @@ function spaceModel(sequelize) {
   return sequelize.define("Space", attributes);
 }
 
+// model equipement
 function equipmentModel(sequelize) {
   const attributes = {
     name: { type: DataTypes.STRING, allowNull: false },
@@ -152,6 +160,7 @@ function equipmentModel(sequelize) {
   return sequelize.define("Equipment", attributes);
 }
 
+// model entrainement
 function trainingModel(sequelize) {
   const attributes = {
     title: { type: DataTypes.STRING, allowNull: false },

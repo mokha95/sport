@@ -17,16 +17,18 @@ function SectionEvent() {
         <div className={styles.actu}>
           <h2 className="text-center">ACTUALITÉS MPOWER GYM</h2>
 
-          <p className="mt-3 text-center">DÉCOUVREZ NOS DERNIERS EVENEMENTS A VENIR</p>
+          <p className="mt-3 text-center">
+            DÉCOUVREZ NOS DERNIERS EVENEMENTS A VENIR
+          </p>
           <div className={styles.trait}></div>
         </div>
         <div className="container mt-5   ">
           <div className="row ">
             {events &&
-                events.map((event) => (
+              events.map((event) => (
                 <div className="col-lg-4" key={event.id}>
                   <div className={styles.txtBas}>
-                  <img
+                    <img
                       className="img-fluid"
                       src={`/img/${event.image}`}
                       alt="repas "
@@ -48,11 +50,11 @@ function SectionEvent() {
           </div>
           <div className="btn2 mt-2 ">
             <Link href="/events/listeEvents">
-             {" "}
-            <button className="btnGlobal mt-2">
-            Voir tous nos événements
-           </button>
-          </Link>
+              {" "}
+              <button className="btnGlobal mt-2">
+                Voir tous nos événements
+              </button>
+            </Link>
           </div>
         </div>
       </article>

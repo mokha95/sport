@@ -22,7 +22,7 @@ function SectionTraining() {
         <div className={styles.actu}>
           <h2 className="text-center">ACTUALITÉS MPOWER GYM</h2>
 
-          <p className="mt-3 text-center">DÉCOUVREZ NOS DERNIERS ARTICLES</p>
+          <p className="mt-3 text-center">DÉCOUVREZ NOS PROGRAMMES</p>
           <div className={styles.trait}></div>
         </div>
         {/* abonnement */}
@@ -31,7 +31,7 @@ function SectionTraining() {
             {trainings &&
               trainings.map((training) => (
                 <div
-                  className="cardTarifs col-xl-3 col-lg-4 col-md-5 col-sm-8 col-9 "
+                  className="cardTarifs col-xl-4 col-lg-4 col-md-5 col-sm-8 col-9 "
                   key={training.id}
                 >
                   <div className="typeAbonnement p-3">

@@ -55,7 +55,7 @@ const monclub = () => {
             <span className="textFitness">
               préparez-vous à vous entraîner{" "}
             </span>{" "}
-            ans un environnement inspirant où le ciel est la limite. Faites un
+            dans un environnement inspirant où le ciel est la limite. Faites un
             pas vers le bien-être et rejoignez-nous pour des Cours en Plein Air
             qui font vibrer le corps et l&apos;esprit.
             <br />

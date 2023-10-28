@@ -5,7 +5,7 @@ export default Add;
 function Add() {
   return (
     <Layout>
-      <h1>Contactez GymPower</h1>
+      <h1>Contactez Mpower Gym</h1>
       <AddContact />
     </Layout>
   );

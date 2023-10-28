@@ -1,22 +1,19 @@
+import Main from "components/Main";
+import Section from "components/Section";
+import Section2 from "components/Section2";
 
-import Main from 'components/Main';
-import Section from 'components/Section';
-import Section2 from 'components/Section2';
-
-import { SectionArticle } from 'components/articles/SectionArticle';
+import { SectionArticle } from "components/articles/SectionArticle";
 // page d'accueil du site
 
 export default Home;
 
 function Home() {
-    return (
-        <div >
-       
-            <Main />
-            <Section />
-            <SectionArticle/>
-            <Section2 />
-            
-        </div>
-    );
+  return (
+    <div>
+      <Main />
+      <Section />
+      <SectionArticle />
+      <Section2 />
+    </div>
+  );
 }

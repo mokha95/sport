@@ -1,4 +1,10 @@
 <!-- 
+    Page  apel un (service)-> service -> api -> base de donnée
+    Next  js 
+    Next js est un framework react permettant de creer des applications web full-stach, on utilise les composants React pour creer des interfaces utilisateur et Next.js pour des fonctionnalités et des optimisations supplementaires.
+    Caracteristique principale
+
+
     1:  aller dans db faire un model (event)
     2: faire le fichier (events-repo) dans le dossier HELPERS
     3:  faire le fichier (events-service) pour utiliser  effectuer des opérations CRUD (Create, Read, Update, Delete) sur des contacts en utilisant des requêtes HTTP vers une L API
@@ -14,6 +20,7 @@
     BASE DE DONNEES
     Un ORM (Object-Relational Mapping) est un outil logiciel qui permet de gérer les relations entre un programme et une base de données relationnelle de manière plus abstraite et orientée objet. Un ORM permet de représenter les données de la base de données sous forme d'objets dans le code, ce qui simplifie la manipulation des données et les opérations de base de données.
 
+*************************************************************************************************************************************
 Les principales fonctions d'un ORM incluent :
 
 Mapping objet-relationnel : Un ORM mappe les tables et les enregistrements de la base de données sur des objets et des relations dans le code. Cela permet de travailler avec les données de manière plus intuitive en utilisant des objets et des méthodes au lieu de requêtes SQL directes.
@@ -30,8 +37,64 @@ Portabilité : En utilisant un ORM, vous pouvez généralement écrire du code q
 
 En résumé, un ORM est un outil puissant qui facilite le développement d'applications en simplifiant la gestion des données et des relations avec la base de données. Il permet aux développeurs de travailler avec les données de manière plus abstraite et orientée objet, ce qui améliore la productivité et la maintenance des applications.
 
+*************************************************************************************************************************************
 
 
+Comment sécuriser une API REST ?
+aplication programing interface
+Les API son des mecanisemes qui permettent à 2 composants logiciels de communiquer entre eux à l'aide de protocole .
+l 'url de l'api du projet est deinie dans publicRuntimeConfig  à http://localhost:3000/api
+LE TOKEN:
+
+un token(jeton) est utilisé pour vérifier l'identité d'un utilisateur ou d'un appareil et contrôler l'accès à certaines ressources ou fonctions, comme un compte en ligne ou une application.
+Imaginez un ticket d'entrée pour un concert. Ce ticket (le token) est délivré à une personne (l'utilisateur) pour lui permettre d'entrer. Une fois à l'intérieur, ce ticket peut être vérifié pour s'assurer que la personne a le droit d'accéder au concert.
+
+Dans le monde de l'informatique, un token fonctionne de la même manière. Il est donné à un utilisateur lors de la connexion ou de l'accès à un service en ligne. Ce token est ensuite utilisé pour s'assurer que l'utilisateur a le droit d'accéder à certaines parties de ce service. Cela renforce la sécurité en garantissant que seules les personnes autorisées peuvent accéder à certaines informations ou effectuer certaines actions.
+
+les jetons d'authentifcation
+ils servent a autoriser les utilisateurs a effectuer l'appel d'api.Les jetons d'authentification verifient que les utilisateurs sont bien ceux qu'ils prétendent être .lorque qu un utilisateur se connecte au serveur de messagerie, le client de messagerie utilise des jetons d'authentification pour sécuriser l'accés.
+
+La valeur de la clé secrète est cruciale pour la vérification des JWT. Lorsqu'un JWT est créé, il est signé à l'aide de cette clé secrète. Lors de la vérification d'un JWT, la même clé secrète doit être utilisée pour s'assurer que le JWT est authentique et n'a pas été altéré.
+
+Il est important que la valeur de serverRuntimeConfig.secret corresponde à la véritable clé secrète utilisée pour signer les JWT dans votre application. Si ces valeurs ne correspondent pas, la vérification des JWT échouera, et l'authentification par JWT ne fonctionnera pas correctement.
+LE CRUD 
+Create:: Creer      >>> Insert 
+Read :: Lire         >>> Select
+Update:: Modifier    >>> Update
+Delete:: Supprimer    >>>delete
 
 
-  -->
+La différence principale entre un client et un serveur réside dans leurs rôles et leurs fonctions au sein d'un réseau informatique. Voici une explication de chacun :
+
+Client :
+
+Un client est un dispositif ou une application informatique qui envoie des demandes à un serveur.
+Il demande des informations, des services ou des ressources à un serveur.
+Typiquement, un client peut être un ordinateur, un smartphone, une tablette, une application web ou mobile, etc.
+Les clients envoient des requêtes au serveur pour obtenir des données ou des services, puis affichent ces données à l'utilisateur.
+Serveur :
+
+Un serveur est un ordinateur ou un logiciel qui fournit des services, des informations ou des ressources à des clients.
+Il répond aux demandes des clients en fournissant les données ou les services demandés.
+Les serveurs sont configurés pour écouter et répondre aux requêtes entrantes des clients.
+Ils exécutent des tâches spécifiques, comme le stockage de données, le traitement de requêtes web, l'envoi de courriels, etc.
+En résumé, un client est celui qui initie des demandes, tandis qu'un serveur est celui qui répond à ces demandes. Les clients et les serveurs travaillent ensemble pour permettre la communication et le partage de données sur un réseau informatique. Les exemples courants incluent les navigateurs web (clients) qui accèdent à des sites web (serveurs), ou les applications mobiles (clients) qui récupèrent des données à partir de serveurs distants.
+ 
+UN SERVEUR WEB:
+un server web et un logiciel qui permet de lire et de repondre a des requete http
+
+FRAMEWORK
+cest un cadre de travail
+
+MODULES CSS
+permet de creer du style unique pour chaque composant pour eviter les conflits de classes
+
+les attaques (Cross-Site Scripting)
+injectent du javascript(script) malveillant dans les formulaires et autres
+
+
+user.service
+RxJS est utilisé pour gérer les mises à jour de l'utilisateur de manière réactive. Le service expose un objet userService avec un BehaviorSubject (userSubject) qui permet aux composants de l application d'observer les changements de l'utilisateur en s'abonnant à cet observable.
+
+le JSON est un format de donnees leger , utiliser pour echanger des données  entre un serveur et un client 
+-->

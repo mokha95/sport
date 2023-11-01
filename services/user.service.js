@@ -12,7 +12,7 @@ const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
 
 // userSubject est un BehaviorSubject qui maintient l'état actuel de l'utilisateur. Il est initialisé avec la valeur stockée dans le localStorage.
 
-// stocke l etat de l utilisateur si la fenetre est ouverte cest que  l utilisateur est à l interieur
+// stocke l etat de l utilisateur si la fenetre est ouverte cest que  l utilisateur est connecté
 const userSubject = new BehaviorSubject(
   typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
 );
@@ -58,7 +58,7 @@ function logout() {
 }
 
 async function register(user) {
-  // requete post pour enregistrer un utilisateur
+  // requete post vers l'url pour enregistrer un utilisateur
   await fetchWrapper.post(`${baseUrl}/register`, user);
 }
 

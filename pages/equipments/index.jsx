@@ -31,9 +31,9 @@ function Index() {
 
   return (
     <Layout>
-      <h1>Eequipments</h1>
+      <h1>Equipements</h1>
       <Link href="/equipments/add" className="btn btn-sm btn-success mb-2">
-        Ajouter un eequipment
+        Ajouter un equipement
       </Link>
       <table className="table table-striped">
         <thead>

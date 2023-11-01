@@ -51,16 +51,10 @@ async function initialize() {
   db.Training.belongsTo(db.Space, { foreignKey: "spaceId" });
   db.Training.belongsTo(db.Equipment, { foreignKey: "equipmentId" });
   db.Training.belongsTo(db.User, { foreignKey: "employeeId" });
-  db.Training.belongsToMany(db.User, {
-    through: "subscription",
-
-    foreignKey: "traineeId",
-  });
-
-  db.User.belongsToMany(db.Training, {
-    through: "subscription",
-
+  db.User.belongsTo(db.Training, {
     foreignKey: "trainingId",
+    allowNull: true,
+    defaultValue: null,
   });
   // synchroniser les tables avec la base de donnée a chaque connexion  vérifie quel est l'état actuel de la table dans la base de données puis effectue les modifications nécessaires dans la table pour qu'elle corresponde au modèle.
   await sequelize.sync({ alter: true });
@@ -82,11 +76,11 @@ function userModel(sequelize) {
 
   const options = {
     defaultScope: {
-      // exclude password hash by default
+      // exclu le hachage du mot de passe
       attributes: { exclude: ["hash"] },
     },
     scopes: {
-      // include hash with this scope
+      // inclu le hachage du mot de passe
       withHash: { attributes: {} },
     },
   };

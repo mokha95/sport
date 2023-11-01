@@ -34,6 +34,7 @@ function authHeader(url) {
   const isLoggedIn = user?.token;
   // vérifie si l'URL de la requête commence par l'URL de l'API en comparant url à publicRuntimeConfig.apiUrl. Cela permet de déterminer si la requête est destinée à l'API ou à un autre endpoint.
   const isApiUrl = url.startsWith(publicRuntimeConfig.apiUrl);
+  // Si l'utilisateur est connecté et que la requête est destinée à l'API, l'en-tête d'authentification est généré avec le jeton JWT de l'utilisateur.
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.token}` };
   } else {
@@ -43,6 +44,8 @@ function authHeader(url) {
 
 async function handleResponse(response) {
   const isJson = response.headers
+    // vérifie si la réponse est au format JSON en examinant l'en-tête content-type.
+    // Si la réponse n'est pas OK (c'est-à-dire qu'elle a un statut d'erreur HTTP, comme 401 ou 403), elle traite l'erreur en effectuant des actions comme  une déconnexion automatique de l'utilisateur s'il est connecté.
     ?.get("content-type")
     ?.includes("application/json");
   const data = isJson ? await response.json() : null;
@@ -54,7 +57,7 @@ async function handleResponse(response) {
       userService.logout();
     }
 
-    // réer un message d'erreur à partir de la réponse HTTP en cas d'erreur, puis rejeter une promesse avec ce message d'erreur
+    // créer un message d'erreur à partir de la réponse HTTP en cas d'erreur, puis rejeter une promesse avec ce message d'erreur
     const error = (data && data.message) || response.statusText;
     return Promise.reject(error);
   }

@@ -1,48 +1,43 @@
-
-import getConfig from 'next/config';
+import getConfig from "next/config";
 // getconfig est utilise pour la configuration de l'application, de l'URL de lApi
 
-import { fetchWrapper } from 'helpers';
+import { fetchWrapper } from "helpers";
 
 // methode fetch pour le crud  des evenement
+//  utilisent fetchWrapper pour effectuer des requêtes HTTP vers les points de terminaison API. Elles permettent d'interagir avec le back-end pour créer, lire, mettre à jour ou supprimer des événements, ainsi que pour récupérer des événements
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/events`;
 
-
 export const eventService = {
-    register,
-    getAll,
-    getById,
-    update,
-    delete: _delete,
-    getVarious
+  register,
+  getAll,
+  getById,
+  update,
+  delete: _delete,
+  getVarious,
 };
 
 async function getVarious() {
-    return await fetchWrapper.get(`${baseUrl}/various`);
-  }
-    // requete post pour enregistrer un Event
+  return await fetchWrapper.get(`${baseUrl}/various`);
+}
+// requete post pour enregistrer un Event
 async function register(event) {
-    await fetchWrapper.post(`${baseUrl}/register`, event);
+  await fetchWrapper.post(`${baseUrl}/register`, event);
 }
 // requête GET pour obtenir tous les events
 async function getAll() {
-    return await fetchWrapper.get(baseUrl);
+  return await fetchWrapper.get(baseUrl);
 }
 // selectionne un event par son id
 async function getById(id) {
-    return await fetchWrapper.get(`${baseUrl}/${id}`);
+  return await fetchWrapper.get(`${baseUrl}/${id}`);
 }
 
 async function update(id, params) {
-    await fetchWrapper.put(`${baseUrl}/${id}`, params);
-
-    
+  await fetchWrapper.put(`${baseUrl}/${id}`, params);
 }
 
 // prefixed with underscored because delete is a reserved word in javascript
 async function _delete(id) {
-    await fetchWrapper.delete(`${baseUrl}/${id}`);
-
- 
+  await fetchWrapper.delete(`${baseUrl}/${id}`);
 }

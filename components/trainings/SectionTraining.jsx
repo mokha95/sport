@@ -47,6 +47,7 @@ function SectionTraining() {
                       </p>
                     </div>
                     <div>
+                      {/* calcule le prix "Les 4 premières semaines à [...]" en soustrayant 10€ du prix de la formation (training.price), en arrondissant le résultat à deux décimales, et en ajoutant le symbole "€" à la fin. Cela permet d'afficher un prix réduit  */}
                       <p>
                         Les 4 premières semaines à{" "}
                         <span className="prixCarte">
@@ -61,7 +62,7 @@ function SectionTraining() {
 
                       <p>Un sac de sport offert</p>
                     </div>
-
+                    {/* , les props  sont utilisées pour passer des données  du composant ConditionalButton, ce qui permet au composant enfant d'afficher des boutons personnalisés en fonction des informations fournies. Les props permettent de transmettre des données entre les composants parent et enfant  */}
                     <ConditionalButton props={props} />
                   </div>
                 );

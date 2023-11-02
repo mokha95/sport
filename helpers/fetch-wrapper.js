@@ -3,7 +3,7 @@ import getConfig from "next/config";
 import { userService } from "services";
 
 const { publicRuntimeConfig } = getConfig();
-
+// fetchwrapper defini des methodes
 export const fetchWrapper = {
   get: request("GET"),
   post: request("POST"),

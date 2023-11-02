@@ -23,6 +23,7 @@ function AddEdit(props) {
 
   // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
   // form validation rules
+  // shema de validation avec yup
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Le prenom est requis"),
     lastName: Yup.string().required("Le nom est requis"),
@@ -39,10 +40,11 @@ function AddEdit(props) {
       ),
     password: Yup.string()
       .transform((x) => (x === "" ? undefined : x))
-      // password optional in edit mode
+      // utilise la méthode .concat() de Yup pour ajouter des règles de validation supplémentaires au champ "password". Si l'utilisateur existe (c'est-à-dire si le formulaire est en mode de modification), alors le champ "password" n'est pas requis, d'où null. Sinon, si l'utilisateur n'existe pas (c'est-à-dire si le formulaire est en mode d'ajout), le champ "password" est requis avec le message d'erreur "le mot de passe est requis".
       .concat(user ? null : Yup.string().required("le mot de passe est requis"))
       .min(6, "Le mot de passe doit contenir 6 caractères"),
     trainingId: Yup.number()
+      // si yup detecte qu il n est pas un nombre il est null(able)
       .transform((value) => (Number.isNaN(value) ? null : value))
       .nullable(),
   });
@@ -55,6 +57,7 @@ function AddEdit(props) {
 
   // get functions to build form with useForm() hook
   // La useForm()fonction hook renvoie un objet avec des méthodes pour travailler avec un formulaire, notamment l'enregistrement des entrées, la gestion de la soumission du formulaire, la réinitialisation du formulaire, l'accès à l'état du formulaire, l'affichage des erreurs et plus encore
+  // register permet d'enregistrer chaque champ du formulaire
   const { register, handleSubmit, reset, formState } = useForm(formOptions);
   const { errors } = formState;
 
@@ -149,7 +152,9 @@ function AddEdit(props) {
         <div className="mb-3 col">
           <label className="form-label">
             Abonnement - ( Actuel est{" "}
-            {user && user.trainingId === null ? " Inexistant" : user.trainingId}
+            {user && user.trainingId === null
+              ? " Inexistant"
+              : user?.trainingId}
             )
           </label>
           <select

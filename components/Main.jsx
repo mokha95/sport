@@ -5,6 +5,7 @@ import Link from "next/link";
 const Main = () => {
   return (
     <main className={styles.menu}>
+      {/* container ne prend pas toute la largeur de l'expace */}
       <div className="container p-5  ">
         <div className="row pt-5  ">
           <div className=" col-lg-6 ">

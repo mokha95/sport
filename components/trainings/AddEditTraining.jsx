@@ -25,6 +25,7 @@ function AddEditTraining(props) {
   const [equipments, setEquipments] = useState([]);
   const [employees, setEmployees] = useState([]);
 
+  // on prend les space lesrvices ds la db,
   useEffect(() => {
     spaceService.getAll().then((x) => setSpaces(x));
     equipmentService.getAll().then((x) => setEquipments(x));
@@ -58,7 +59,7 @@ function AddEditTraining(props) {
   const { errors } = formState;
 
   // La onSubmitfonction est appelée lorsque le formulaire est soumis et valide, et crée ou met à jour un utilisateur en fonction du mode dans lequel il se trouve.
-
+  // redirige ensuite l'utilisateur vers la page "/trainings" et affiche un message de succès ou d'erreur en conséquence.
   async function onSubmit(data) {
     alertService.clear();
     try {
@@ -80,7 +81,7 @@ function AddEditTraining(props) {
       console.error(error);
     }
   }
-
+  // L'utilisation de "react-hook-form" pour gérer l'enregistrement de cet élément dans le formulaire facilite également la validation et la gestion des erreurs. Si des erreurs de validation surviennent, la classe "is-invalid" est ajoutée pour appliquer des styles CSS supplémentaires à la liste déroulante.
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="row">
@@ -128,6 +129,7 @@ function AddEditTraining(props) {
 
         <div className="mb-3 col">
           <label className="form-label">Equipement</label>
+          {/* select permet à l'utilisateur de choisir parmi une liste d'options d'équipement. */}
           <select
             name="equipmentId"
             {...register("equipmentId")}

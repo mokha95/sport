@@ -29,12 +29,13 @@ function SectionTraining() {
         {/* abonnement */}
         <div className="container mt-5 ">
           <div className="row justify-content-center gap-5 carteContainerAbonnement ">
+            {/* utilisation d emap pour parcourir trainings et faire des cartes */}
             {trainings &&
               trainings.map((training) => {
                 let props = { trainingId: training.id, user: user };
                 return (
                   <div
-                    className="cardTarifs col-xl-3 col-lg-4 col-md-5 col-sm-8 col-9 "
+                    className="cardTarifs col-xl-4 col-lg-4 col-md-5 col-sm-8 col-9 "
                     key={training.id}
                   >
                     <div className="typeAbonnement p-3">

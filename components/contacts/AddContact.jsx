@@ -13,12 +13,13 @@ function AddContact() {
   const router = useRouter();
 
   // Les règles de validation de formulaire sont définies avec la bibliothèque de validation de schéma Yup et transmises avec la fonction formOptionsReact Hook Form useForm()
-  // form validation rules
+  // regex modele de text utiiliser pour valider rechercher ou manipuler des chaînes de caractères
+  // regex pour firstname autorise que lettre minuscule et majuscule et les espaces
   const validationSchema = Yup.object().shape({
     firstName: Yup.string()
       .matches(
         /^[A-Za-z\s]+$/,
-        "Le prenom doit contenir uniquement des lettres et des espaces"
+        "Le prenom doit contenir uniquement des lettres et des espaces "
       )
       .required("Le prenom est requis"),
     lastName: Yup.string()
@@ -28,6 +29,7 @@ function AddContact() {
       )
       .required("Un nom est requis"),
     numero: Yup.string()
+      // regex pour firstname autorise que les numero de 10 chiffres
       .matches(
         /^[0-9]{10}$/,
         "Le numéro de téléphone doit contenir 10 chiffres"
@@ -43,7 +45,7 @@ function AddContact() {
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
 
-  // get functions to build form with useForm() hook
+  //
   // La useForm()fonction hook renvoie un objet avec des méthodes pour travailler avec un formulaire, notamment l'enregistrement des entrées, la gestion de la soumission du formulaire, la réinitialisation du formulaire, l'accès à l'état du formulaire, l'affichage des erreurs et plus encore
   const { register, handleSubmit, reset, formState } = useForm(formOptions);
   const { errors } = formState;
@@ -68,11 +70,13 @@ function AddContact() {
     }
   }
 
+  // errors est utilisé pour capturer les erreurs de validation des champs du formulaire et permet d'afficher des messages d'erreur personnalisés à l'utilisateur lorsque des données invalides sont soumises.
+  // register est une fonction utilisée pour connecter les champs du formulaire HTML à React Hook Form, ce qui permet une gestion simplifiée des valeurs, de la validation et de la soumission du formulaire.
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="row">
         <div className="mb-3 col">
-          <label className="form-label">Prenom</label>
+          <label className="form-label">Prenom </label>
           <input
             name="firstName"
             type="text"
@@ -137,6 +141,7 @@ function AddContact() {
           )}
           Envoyer
         </button>
+        {/* au clic reinitialise les valeur du champs */}
         <button
           onClick={() => reset(formOptions.defaultValues)}
           type="button"
@@ -145,7 +150,7 @@ function AddContact() {
         >
           Reset
         </button>
-        <Link href="/contacts" className="btn btn-link">
+        <Link href="/" className="btn btn-link">
           Annuler
         </Link>
       </div>

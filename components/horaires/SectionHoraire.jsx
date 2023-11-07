@@ -16,6 +16,7 @@ function SectionHoraire() {
     horaireService.getAll().then((x) => setHoraires(x));
   }, []);
 
+  // affiche  dynamiquement les horaires
   return (
     <>
       <section>
@@ -26,6 +27,7 @@ function SectionHoraire() {
                 <li key={horaire.id}>
                   <span className="fw-bold">{horaire.jour} :</span>
                   <span>
+                    {/* fermeture_matin" est vrai, elle affiche "Fermé". Sinon, elle affiche les horaires d'ouverture du matin au format "début_matin fin_matin" suivis d'un tiret  */}
                     {horaire.fermeture_matin
                       ? "Fermé"
                       : ` ${horaire.debut_matin}  ${horaire.fin_matin}`}

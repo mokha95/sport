@@ -42,7 +42,7 @@ async function login(email, password) {
   });
 
   // met à jour le sujet observable userSubject avec les informations de l'utilisateur et stocke l'utilisateur dans le localStorage
-  // convertit une variable javascript en string JSON
+  // convertit une variable javascript en string JSON, il est convertit en json car le localStorage peut stocker que des chaines de caracteres
   userSubject.next(user);
   localStorage.setItem("user", JSON.stringify(user));
 }

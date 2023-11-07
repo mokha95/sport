@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "styles/article.module.css";
 
-
 export { SectionArticle };
 
 function SectionArticle() {
@@ -18,7 +17,7 @@ function SectionArticle() {
         <div className={styles.actu}>
           <h2 className="text-center">ACTUALITÉS MPOWER GYM</h2>
 
-          <p className="mt-3 text-center">DÉCOUVREZ NOS DERNIERS ARTICLES</p>
+          <p className="mt-3 text-center">DÉCOUVREZ NOS DERNIERS ARTICLES </p>
           <div className={styles.trait}></div>
         </div>
         <div className="container mt-5   ">
@@ -27,7 +26,7 @@ function SectionArticle() {
               articles.map((article) => (
                 <div className="col-lg-4" key={article.id}>
                   <div className={styles.txtBas}>
-                  <img
+                    <img
                       className="img-fluid"
                       src={`/img/${article.image}`}
                       alt="repas "
@@ -47,13 +46,11 @@ function SectionArticle() {
                 </div>
               ))}
           </div>
-            <div className="btn2 mt-2 ">
+          <div className="btn2 mt-2 ">
             <Link href="/articles/listeArticles">
-             {" "}
-            <button className="btnGlobal mt-2">
-            Voir tous nos articles
-           </button>
-          </Link>
+              {" "}
+              <button className="btnGlobal mt-2">Voir tous nos articles</button>
+            </Link>
           </div>
         </div>
       </article>

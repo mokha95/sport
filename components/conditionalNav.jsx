@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import { NavLink } from '.';
-import { userService } from 'services';
+import { NavLink } from ".";
+import { userService } from "services";
 
 import styles from "styles/header.module.css";
 
@@ -10,17 +10,17 @@ const ConditionalNav = () => {
 
   useEffect(() => {
     // s abonne a l'observable userservice a chaque mise a jour , le setter() met a jour l utilisateur
-      const subscription = userService.user.subscribe(x => setUser(x));
-      return () => subscription.unsubscribe();
+    const subscription = userService.user.subscribe((x) => setUser(x));
+    return () => subscription.unsubscribe();
   }, []);
 
-
-  if (user ) {
+  // si l'utilisateur est connecté affiche la navigation avec membre connecter sinon affiche la nav avec s'inscrire
+  if (user) {
     return (
       <>
         <ul className="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <NavLink href={"/"} className="nav-link ">
+            <NavLink href="/" className={`nav-link ${styles.menuItem}`}>
               {" "}
               Accueil
             </NavLink>
@@ -33,35 +33,40 @@ const ConditionalNav = () => {
           </li> */}
 
           <li className="nav-item">
-            <NavLink href={"/monclub"} className="nav-link ">
+            <NavLink href="/monclub" className={`nav-link ${styles.menuItem}`}>
               Notre Club
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink href={"/abonnement"} className="nav-link ">
+            <NavLink
+              href="/abonnement"
+              className={`nav-link ${styles.menuItem}`}
+            >
               Abonnement
             </NavLink>
           </li>
           <li className="nav-item">
-          <p className='membreP'>
-        <span>Membre connecté(e) : </span>
+            <p className="membreP">
+              <span>Membre connecté(e) : </span>
               {user.firstName}
-          </p>
+            </p>
           </li>
         </ul>
-               
-        <button onClick={userService.logout} className="btn btn-link nav-item nav-link">Se déconnecter</button>
 
-
-    
+        <button
+          onClick={userService.logout}
+          className="btn btn-link nav-item nav-link"
+        >
+          Se déconnecter
+        </button>
       </>
     );
   } else {
     return (
       <>
         <ul className="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
-          <li className="nav-item " >
+          <li className="nav-item ">
             <NavLink href="/" className={`nav-link ${styles.menuItem}`}>
               Accueil
             </NavLink>
@@ -80,7 +85,10 @@ const ConditionalNav = () => {
           </li>
 
           <li className="nav-item">
-            <NavLink href={"/abonnement"} className={`nav-link ${styles.menuItem}`}>
+            <NavLink
+              href={"/abonnement"}
+              className={`nav-link ${styles.menuItem}`}
+            >
               Abonnement
             </NavLink>
           </li>
@@ -88,7 +96,10 @@ const ConditionalNav = () => {
 
         <ul className="navbar-nav d-flex  align-items-center  ">
           <li className="nav-item navigationBoutons ">
-            <NavLink href={"/account/register"} className={` ${styles.btnInscription}  `}>
+            <NavLink
+              href={"/account/register"}
+              className={` ${styles.btnInscription}  `}
+            >
               S&apos;inscrire
             </NavLink>
           </li>

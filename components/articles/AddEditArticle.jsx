@@ -4,13 +4,14 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useState } from "react";
+// Axiox est utilisée pour faire des requetes http et pour interagir avec des serveurs Web et récupérer des données à partir d'URL distantes.
 import axios from "axios";
 
 import { articleService, alertService } from "services";
 // composant AddEdit est utilisé à la fois pour ajouter et modifier des utilisateurs, il contient un formulaire construit avec la bibliothèque React Hook Form et est utilisé par la page d'ajout d'utilisateur et la page de modification d'utilisateur .
 
 export { AddEditArticle };
-
+// Déclaration de variables et de hooks
 function AddEditArticle(props) {
   const article = props?.article;
   const router = useRouter();
@@ -18,6 +19,9 @@ function AddEditArticle(props) {
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedFile, setSelectedFile] = useState();
 
+  // Gestion du téléchargement de l'image
+  //  fohandleUpload est responsable de la préparation et de l'envoi du fichier image sélectionné vers un endpoint spécifique sur le serveur
+  //  puis elle gère la réponse ou les erreurs éventuelles.
   const handleUpload = async () => {
     try {
       if (!selectedFile) return;
@@ -38,7 +42,7 @@ function AddEditArticle(props) {
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
 
-  // set default form values if in edit mode
+  // Initialisation des valeurs par défaut du formulaire en mode édition
   if (article) {
     formOptions.defaultValues = props.article;
   }
@@ -49,13 +53,12 @@ function AddEditArticle(props) {
   const { errors } = formState;
 
   // La onSubmitfonction est appelée lorsque le formulaire est soumis et valide, et crée ou met à jour un utilisateur en fonction du mode dans lequel il se trouve.
-
   async function onSubmit(data) {
     data.image = selectedFile.name;
     console.log(data);
     alertService.clear();
     try {
-      // create or update article based on article prop
+      // Création ou mise à jour de l'article en fonction du mode
       let message;
       if (article) {
         await articleService.update(article.id, data);
@@ -65,7 +68,7 @@ function AddEditArticle(props) {
         message = "article ajouté";
       }
 
-      // redirect to user list with success message
+      // Redirection vers la liste des articles avec un message de succès
       router.push("/articles");
       alertService.success(message, true);
     } catch (error) {
@@ -73,7 +76,7 @@ function AddEditArticle(props) {
       console.error(error);
     }
   }
-
+  // Rendu du formulaire
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="row">
@@ -136,7 +139,9 @@ function AddEditArticle(props) {
             <span className="spinner-border spinner-border-sm me-1"></span>
           )}
           {!selectedFile && (
-            <span className="me-1">Sélectionnez l&apos;image avant d&apos;</span>
+            <span className="me-1">
+              Sélectionnez l&apos;image avant d&apos;
+            </span>
           )}
           Enregistrer
         </button>

@@ -10,6 +10,7 @@ import {
   userService,
 } from "services";
 
+// récupère des données d'entraînements, d'espaces, d'équipements et d'employés depuis la base de données et les affiche sous forme de tableau. Les utilisateurs peuvent ajouter, modifier ou supprimer des entraînements à l'aide des boutons correspondants.
 export default Index;
 
 // page pour afficher la tables trainings
@@ -31,7 +32,7 @@ function Index() {
       setEmployees(filteredUsers);
     });
   }, []);
-
+  // supprime un entrainement par son id
   function deleteTraining(id) {
     setTrainings(
       trainings.map((x) => {
@@ -45,12 +46,14 @@ function Index() {
       setTrainings((trainings) => trainings.filter((x) => x.id !== id));
     });
   }
+  // recherche l'espace correspondant à l'entraînement en comparant les ID. Si un espace avec le même ID que l'ID de l'entraînement est trouvé, la fonction renvoie le nom de cet espace.
   function printSpaceName(spaces, training) {
     if (spaces.length > 0) {
       const space = spaces.find((space) => space.id === training.spaceId);
       return space.name;
     }
   }
+  // recherche le nom de l'équipement correspondant à l'entraînement en utilisant l'ID de l'équipement.
   function printEquipmentName(equipments, training) {
     if (equipments.length > 0) {
       const equipment = equipments.find(
@@ -60,7 +63,7 @@ function Index() {
       return equipment.name;
     }
   }
-
+  // recherche le nom de l'employé (instructeur) correspondant à l'entraînement en utilisant l'ID de l'employé.
   function printEmployeeName(employees, training) {
     if (employees.length > 0) {
       const employee = employees.find(
@@ -87,6 +90,7 @@ function Index() {
           </tr>
         </thead>
         <tbody>
+          {/* , ce code génère un tableau d'entraînements avec des détails tels que le titre, le prix, l'espace, l'équipement et l'instructeur. Il permet également de modifier ou supprimer des entraînements. */}
           {trainings &&
             trainings.map((training) => (
               <tr key={training.id}>

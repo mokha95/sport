@@ -44,6 +44,7 @@ function App({ Component, pageProps }) {
       "/account/login",
       "/account/register",
       "/",
+      "/contacts",
       "/monclub",
       "/abonnement",
     ];

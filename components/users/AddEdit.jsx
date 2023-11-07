@@ -122,9 +122,11 @@ function AddEdit(props) {
         </div>
         <div className="mb-3 col">
           <label className="form-label">
-            Password
+            Mot de passe
             {user && (
-              <em className="ms-1">(Leave blank to keep the same password)</em>
+              <em className="ms-1">
+                (Laissez vide pour conserver le même mot de passe)
+              </em>
             )}
           </label>
           <input

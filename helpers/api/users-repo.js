@@ -58,6 +58,7 @@ async function getById(id) {
 async function create(params) {
   // verifie si l email existe deja dans la base de donnee
   if (await db.User.findOne({ where: { email: params.email } })) {
+    // si un utilisateur avec le meme email est trouvé, géere une erreur (l utilisateur existe deja)
     throw 'Email "' + params.email + '"  existe déjà';
   }
 

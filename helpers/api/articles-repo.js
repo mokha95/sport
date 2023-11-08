@@ -25,7 +25,7 @@ async function getAll() {
 async function getById(id) {
   return await db.Article.findByPk(id);
 }
-
+// params contient les données de l'artcile(le titre, la date de creation)
 async function create(params) {
   const Article = new db.Article(params);
   // save article

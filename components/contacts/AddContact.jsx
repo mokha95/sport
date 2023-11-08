@@ -38,7 +38,7 @@ function AddContact() {
     email: Yup.string()
       .matches(
         /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
-        "Adresse e-mail non valide"
+        "Adresse e-mail non valide "
       )
       .required("Email est requis"),
     message: Yup.string().required("Un contenu est requis"),

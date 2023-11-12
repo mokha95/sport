@@ -12,7 +12,7 @@ const monclub = () => {
           </h1>
           <div className=" ">
             <img
-              src="img/sportenGroupe (1).jpg"
+              src="img/sportenGroupe(2).jpg"
               alt="cours collectif"
               className="img-fluid"
             />

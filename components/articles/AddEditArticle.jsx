@@ -20,7 +20,7 @@ function AddEditArticle(props) {
   const [selectedFile, setSelectedFile] = useState();
 
   // Gestion du téléchargement de l'image
-  //  fohandleUpload est responsable de la préparation et de l'envoi du fichier image sélectionné vers un endpoint spécifique sur le serveur
+  //  handleUpload est responsable de la préparation et de l'envoi du fichier image sélectionné vers un endpoint spécifique sur le serveur
   //  puis elle gère la réponse ou les erreurs éventuelles.
   const handleUpload = async () => {
     try {

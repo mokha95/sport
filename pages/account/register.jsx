@@ -12,7 +12,7 @@ export default Register;
 function Register() {
   const router = useRouter();
 
-  // form validation rules
+  // Définition des règles de validation du formulaire avec Yup
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Le prénom est requis"),
     lastName: Yup.string().required("Le nom est requis"),
@@ -22,6 +22,7 @@ function Register() {
       .test("is-valid", "L'email est incorrect", (value) =>
         isEmailValidator(value)
       ),
+    // le mot de passe doit contenir une majuscule un chiffre et un caractere special
     password: Yup.string()
       .required("Le mot de passe est requis")
       .min(12, "Le mot de passe doit contenir au moins 12 caractères")
@@ -30,22 +31,28 @@ function Register() {
         "Le mot de passe doit contenir au moins une majuscule, un chiffre et un caractère spécial"
       ),
   });
+  // Configuration du formulaire avec Yup Resolver resolver permet de connecter le shema yup au formulaire
   const formOptions = { resolver: yupResolver(validationSchema) };
 
-  // get functions to build form with useForm() hook
+  // // Obtention des fonctions pour construire le formulaire avec le hook useForm
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
 
+  // Fonction appelée lors de la soumission du formulaire
   function onSubmit(user) {
+    // Appelle le service d'inscription de l'utilisateur
     return userService
       .register(user)
       .then(() => {
+        // Affiche un message de succès
         alertService.success("Inscription reussie", true);
+        // Redirige vers la page de connexion
         router.push("login");
       })
       .catch(alertService.error);
   }
 
+  // Affichage du composant
   return (
     <Layout>
       <div className="card mb-5">

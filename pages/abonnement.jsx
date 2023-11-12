@@ -40,7 +40,7 @@ const Abonnement = () => {
         </p>
         {/* img */}
         <div className="container d-flex justify-content-center">
-          <div className="imgGroupe w-75   ">
+          <div className="imgGroupe  mx-auto  ">
             <img className="img-fluid " src="/img/article1.jpg" alt="" />
           </div>
         </div>

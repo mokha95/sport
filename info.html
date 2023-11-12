@@ -10,6 +10,7 @@
     creation d api 
     utilisation des module CSS
     tres bon pour le SEO 
+    next rajoute un cadre a react en utilisant toujours les fonctionnalité de react(composants, hooks,contect)
 
     React
     React est une librairie( une librairie offre un cadre de travail moins evolué qu'un framework )
@@ -134,7 +135,7 @@ CONCEPTION : Le dictionnaire de données est un document ou un ensemble de docum
 
 GIT 
 est un systeme de gestion de version qui permet de suivre et de gerer des modification de code source dans un projet
-git pest un systeme de fichiers qui contient les fichiers d aun dossier
+git est un systeme de fichiers qui contient les fichiers d aun dossier
 le systemes de controle de version permet a une equipe de gerer les changement apporté au fichier
 
 Npm : Node package Manager est un gestionnaire de paquet utiliser ,facilite la gestion des dépendances, l'automatisation des tâches et le partage de code au sein de la communauté des développeurs
@@ -184,4 +185,21 @@ Le ROUTAGE avec next js
 Next.js facilite la gestion du routage en utilisant une structure de fichiers intuitive et en fournissant des composants pour la navigation. Il prend également en charge le routage côté serveur pour des performances optimales et le routage côté client pour une expérience utilisateur fluide, vous permettant de créer des applications web modernes de manière efficace.
 
 dans pages il ya le dossier api utiliser pour le serveur et il ya les dossier qui sont utiliser coté client
+S E O 
+SEARCH ENGINE OPTIMISATION:
+liens descriptif
+image description , utiliser des mots clés
+avoir une balise meta description (decrire un site)
+avoir des h1(titre il en faut 1 par pages)
+utiliser les titres comme h1 h2 h3 h4 etc
+utiliser des elemant semantique  cest important pour l 'accessibilité et le seo du type nav, footer,header, button, form ol
+
+bcrypt permet de hacher les mot de passe 
+    1:Protection contre les accès non autorisés les raisons pour lequelle on hache les mots de passe sont que si une base de données est détourné(les attaquants auraient acces a tout les mots de passe des utilisateurs , en hachant les mot de passe , les attaquants ne voient que le hachage qui est difficile a inverser pour trouver le mot de passe)
+    2:Confidentialité des utilisateurs  on hache les mot de passe pour que ils soient traite de maniere securisé pour la confidentialité des utilisateur 
+    3:Compliance avec les normes de sécurité : les normes de sécurité imposent cela telles que le Règlement général sur la protection des données (RGPD) en Europe, imposent des exigences strictes en matière de protection des données personnelles. Le hachage des mots de passe est souvent une pratique recommandée pour se conformer à ces normes.
+    4:Éviter l'utilisation de mots de passe similaires : : Les algorithmes de hachage utilisés pour stocker les mots de passe sont conçus pour être unidirectionnels, ce qui signifie qu'il est difficile (idéalement, impossible) de remonter du hachage au mot de passe d'origine. Les fonctions de hachage sécurisées, comme bcrypt, sont spécifiquement conçues pour rendre les attaques par force brute ou les attaques par dictionnaire plus difficiles.
+    En résumé, hacher les mots de passe est une mesure de sécurité cruciale pour protéger les informations sensibles des utilisateurs contre l'accès non autorisé et les compromissions de données. C'est une pratique standard dans le développement sécurisé des applications web.
+  Pour les mots de passe haché on ne peut pas retrouver les données des donnée hachés
+  le cryptage ont peut decrypter les donnnes
 -->

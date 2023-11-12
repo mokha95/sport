@@ -34,7 +34,7 @@ function Index() {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th style={{ width: "10%" }}>Prenom</th>
+            <th style={{ width: "10%" }}>Prenom </th>
             <th style={{ width: "10%" }}>nom</th>
             <th style={{ width: "15%" }}>email</th>
             <th style={{ width: "10%" }}>numero</th>
@@ -74,6 +74,7 @@ function Index() {
                 </td>
               </tr>
             ))}
+          {/* si contact est null affiche le spinner */}
           {!contacts && (
             <tr>
               <td colSpan="4">

@@ -28,7 +28,7 @@ async function authenticate({ email, password }) {
     throw "Email ou mot de passe incorrect";
   }
 
-  // creer un jeton JWT valide pendant 7 jours
+  // creer un jeton JWT valide pendant 7 jours  signé avec la clé secrète
   const token = jwt.sign({ sub: user.id }, serverRuntimeConfig.secret, {
     expiresIn: "7d",
   });

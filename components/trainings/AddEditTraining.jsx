@@ -25,11 +25,12 @@ function AddEditTraining(props) {
   const [equipments, setEquipments] = useState([]);
   const [employees, setEmployees] = useState([]);
 
-  // on prend les space lesrvices ds la db,
+  // on prend les space lesrvices ds la db, x sont les donnees recuperee
   useEffect(() => {
     spaceService.getAll().then((x) => setSpaces(x));
     equipmentService.getAll().then((x) => setEquipments(x));
     userService.getAll().then((users) => {
+      // on filtre les utilisateur pour que sa soit que les admin ou les employe qui sont autoriser a  donnees des cours
       const filteredUsers = users.filter(
         (user) => user.roles === "EMPLOYEE" || user.roles === "ADMIN"
       );

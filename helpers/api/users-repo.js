@@ -65,7 +65,7 @@ async function create(params) {
   // creer un nouvel utilisateur avec les parametre
   const user = new db.User(params);
 
-  // hash le mot de pass 10 est le cout du hachage nbr de tours de hachage pour la sécurité du hachage
+  // hash le mot de pass 10 est le cout du hachage nbr de tours de hachage pour la sécurité du hachage le sl est genere automatiquement
   if (params.password) {
     user.hash = bcrypt.hashSync(params.password, 10);
   }

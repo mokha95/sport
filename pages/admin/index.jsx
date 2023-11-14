@@ -6,9 +6,11 @@ export default Index;
 // composant pour la page admin
 
 function Index() {
+  // useState pour gérer l'état local de l'utilisateur
   const [user, setUser] = useState(null);
-
+  // useEffect pour effectuer des opérations après le rendu initial
   useEffect(() => {
+    // S'abonne à l'observable userService.user
     const subscription = userService.user.subscribe((x) => setUser(x));
     return () => subscription.unsubscribe();
   }, []);

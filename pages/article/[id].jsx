@@ -33,6 +33,7 @@ function Article() {
         <Layout>
           <>
             <h1>{article.title}</h1>
+
             <p>{article.content}</p>
             <img
               className="img-fluid"

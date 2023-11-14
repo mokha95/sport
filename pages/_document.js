@@ -4,7 +4,7 @@ export default Document;
 // structure de l'application 1 ere partie du layout
 function Document() {
   return (
-    <Html lang="en">
+    <Html lang="fr">
       <Head>
         {/* eslint-disable-next-line @next/next/no-css-tags */}
         <link

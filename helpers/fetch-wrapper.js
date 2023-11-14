@@ -28,7 +28,7 @@ function request(method) {
 // permet à l'API de vérifier l'authenticité de l'utilisateur.
 
 function authHeader(url) {
-  // return auth header with jwt if user is logged in and request is to the api url
+  // retourne l'en-tête d'authentification avec JWT si l'utilisateur est connecté et que la requête est destinée à l'URL de l'AP
   const user = userService.userValue;
   // vérifie si l'utilisateur est connecté en examinant la propriété token
   const isLoggedIn = user?.token;

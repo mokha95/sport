@@ -1,7 +1,7 @@
 <!-- 
     Page  apel un (service)-> service -> api -> base de donnée
     Next  js 
-    Next js est un framework react permettant de creer des applications web full-stach, on utilise les composants React pour creer des interfaces utilisateur et Next.js pour des fonctionnalités et des optimisations supplementaires.
+    Next js est un framework react permettant de creer des applications web full-stack, on utilise les composants React pour creer des interfaces utilisateur et Next.js pour des fonctionnalités et des optimisations supplementaires.
     Caracteristique principale
     systeme de routing
     rendu serveur , rendu statique,
@@ -11,6 +11,7 @@
     utilisation des module CSS
     tres bon pour le SEO 
     next rajoute un cadre a react en utilisant toujours les fonctionnalité de react(composants, hooks,contect)
+    pour faire un projet next: npm create-next-app (nom du projet)
 
     React
     React est une librairie( une librairie offre un cadre de travail moins evolué qu'un framework )
@@ -135,6 +136,12 @@ CONCEPTION : Le dictionnaire de données est un document ou un ensemble de docum
 
 GIT 
 est un systeme de gestion de version qui permet de suivre et de gerer des modification de code source dans un projet
+les commandes de git : 
+    git status
+    git add
+    git commit -M
+    git push
+    git clone
 git est un systeme de fichiers qui contient les fichiers d aun dossier
 le systemes de controle de version permet a une equipe de gerer les changement apporté au fichier
 
@@ -202,4 +209,310 @@ bcrypt permet de hacher les mot de passe
     En résumé, hacher les mots de passe est une mesure de sécurité cruciale pour protéger les informations sensibles des utilisateurs contre l'accès non autorisé et les compromissions de données. C'est une pratique standard dans le développement sécurisé des applications web.
   Pour les mots de passe haché on ne peut pas retrouver les données des donnée hachés
   le cryptage ont peut decrypter les donnnes
+  bcrypt integre automatiquement la notion se Salage des mots de passe, le salage est une technique ou un morceau aléatoire de données(sel)est ajouté au mot de passe avant le hachage
+  Cela rend chaque hachage unique, meme si 2 utilisateurs ont le meme mot de passe
+
+  MVC :
+  Le mvc sert a separer l'application, organiser le code en 3 composants
+    1-Model : Il représente les données et la logique métier de l'application. C'est la partie responsable de l'accès aux données, de leur manipulation et de leur traitement.
+    2-Vue :  Elle représente l'interface utilisateur et est responsable de l'affichage des données au travers du modèle. La vue observe le modèle et affiche les données en conséquence.
+    1-Controleur : Il fait le lien entre le modèle et la vue. Il reçoit les entrées de l'utilisateur, traite les actions de l'utilisateur (comme les clics de souris), met à jour le modèle en conséquence, et actualise la vue pour refléter les changements.
+    
+    dans le Model on definit des Requetes que l on fait a la base de donnée
+    Architecture 1 tiers
+
+    L'architecture en tiers, aussi appelée architecture à trois niveaux, est une façon d'organiser un système informatique en trois parties distinctes, chacune ayant un rôle spécifique. Ces trois parties sont généralement appelées "tiers". Voici une explication simple de chaque tiers :
+
+Tier de Présentation (ou Interface Utilisateur) :
+
+C'est la partie avec laquelle les utilisateurs interagissent directement.
+Elle gère l'interface graphique ou l'expérience utilisateur.
+Son objectif est de rendre l'interaction avec le système conviviale pour les utilisateurs.
+Tier de Logique Métier (ou Traitement) :
+
+Il contient la logique métier et les règles de traitement des données.
+Responsable de la manipulation, du traitement et de la gestion des données.
+C'est là que les calculs, les validations et les décisions métier sont effectués.
+Tier de Données (ou Stockage) :
+
+Il gère le stockage des données utilisées par le système.
+Stocke les informations de manière à permettre un accès rapide et efficace.
+Peut inclure des bases de données ou d'autres mécanismes de stockage.
+L'idée derrière cette architecture en tiers est de séparer ces responsabilités pour rendre le système plus modulaire, flexible et facile à maintenir. Chaque tiers peut être développé, mis à jour ou remplacé indépendamment des autres, tant que l'interface entre eux est respectée. Cela facilite également la collaboration entre différentes équipes de développement, car chaque équipe peut se concentrer sur un aspect spécifique du système.
+
+Architecture 2 tiers 
+Client :
+
+Le client est la partie du système avec laquelle l'utilisateur interagit directement.
+Il peut s'agir d'une application sur un ordinateur, d'un navigateur web, d'une application mobile, etc.
+Le client est responsable de la présentation des informations à l'utilisateur et de la collecte des entrées de l'utilisateur.
+Serveur :
+
+Le serveur est la partie qui gère le traitement des requêtes provenant du client.
+Il contient la logique métier, traite les données et effectue les opérations nécessaires.
+Le serveur gère également l'accès aux données, qu'il peut stocker localement ou récupérer à partir d'une base de données.
+Dans cette architecture, la communication entre le client et le serveur se fait généralement par le biais d'une connexion réseau. Le client envoie des requêtes au serveur, et le serveur répond en fournissant les données demandées ou en effectuant les actions nécessaires.
+
+L'architecture en deux tiers est souvent utilisée dans les applications web, où le navigateur agit en tant que client et communique avec un serveur distant. Cette approche permet une séparation claire des responsabilités entre la partie visible par l'utilisateur (client) et la partie gérant la logique métier et les données (serveur).
+
+
+********************************************************************************************************************************************************************************************************
+
+    < Base de données
+      Base de donné  est ensemble de données structuré qui permet d enregistrer les données de facon organiser (stoké les infos concernant les organisateurs de notre site )
+
+    1: Une base de données sont des informations stockées dans un dispositif informatique , les technologie existantes permettent d'organiser  et de structurer la base de données de maniere à pouvoir facilement manipuler le contenu et stocker efficacement des informations
+    2 Une base de données est un ensemble d'informations qui sont organiser structuré
+
+
+    Le logiciel qui manipule les bases de données est appelé système de gestion de base de données (SGBD). Il permet d'organiser, de contrôler, de consulter et de modifier la base de données. Les opérations sont parfois formulées dans un langage de requête tel que SQL.
+    exemple de sgbd: 
+
+    *Microsoft Access
+    *Oracle
+    *Sql Server
+    *PostgreSql
+
+ A partir de ces logiciels on peut :
+
+ -> creer une base de données 
+ -> Insérer les données. 
+ -> Extraire les données. 
+ -> Mettre a jour les données. 
+
+****************************************************2SQL**********************************************************************************************
+SQL (sigle de Structured Query Language, en français langage de requête structurée) est
+un langage informatique normalisé servant à exploiter des bases de données relationnelles. 
+
+
+****************************************************3 REQUETE SQL**********************************************************************************************
+
+L’utilisation de la commande SELECT en SQL permet de lire toutes les données d’une ou plusieurs colonnes. Cette commande peut potentiellement afficher des lignes en doubles. Pour éviter des redondances dans les résultats il faut simplement ajouter DISTINCT après le mot SELECT. 
+SELECT * FROM products = sélectionne tout les produits venant de la table products
+
+SELECT productName,quantityStock, buyPrice FROM products = • SELECT productName, quantityInStock, buyPrice : on
+sélectionne certaines colonnes
+• FROM products : de la table products
+selectionner les 3 employees = SELECT prenom FROM employe LIMIT 3
+
+les alias
+select distinct  codefilm  as "Le code des films loués" from locations ;
+Supprimer les doublons
+On peut les supprimer et ne garder qu’une occurrence
+
+SELECT DISTINCT jobTitle FROM employees
+Filtrer les lignes
+
+Sélectionner les employés d’une fonction précise :
+SELECT * FROM employees WHERE jobTitle = 'Sales Rep'
+
+Sélectionner les bureaux aux Etats-Unis :
+SELECT * FROM offices WHERE country = 'USA'*
+
+selectionner le prenom des employées dont le salaire est entre 14000 et 21500
+where salaire between 14000 and 21500
+SELECT prenom from employe = 
+
+SELECT codefilm AS "Le code des films loués", duree 
+AS "Durée de la location" FROM Locations;
+
+SELECT * 
+FROM Livres 
+ORDER BY prix DESC;
+
+SELECT * 
+FROM Clients 
+ORDER BY nomcli;
+
+SELECT * 
+FROM Clients 
+ORDER BY nomcli DESC;
+
+SELECT * 
+FROM Livres 
+ORDER BY prix DESC, isbn;
+
+SELECT * FROM Produit ORDER BY prixpro DESC;
+SELECT * FROM Clients ORDER BY villecli;
+
+Afficher le nom des films dans l'ordre alphabétique inverse.
+SELECT nomfilm FROM Films ORDER BY nomfilm DESC;
+
+JOINTURE 
+SELECT nomfilm, duree 
+FROM Films 
+INNER JOIN Locations
+ON Films.codefilm=Locations.codefilm;
+
+SELECT nomfilm, duree 
+FROM Films 
+LEFT OUTER JOIN Locations
+    ON Films.codefilm=Locations.codefilm;
+
+
+select prenom from employe
+WHERE dateContrat BETWEEN '2000-01-01' And '2009-12-31'
+
+ORDER BY: par ordre
+selectionne les customers(clients) par ordre descroissant : SELECT * FROM customers ORDER by id DESC;
+
+changer le champ d'une colonne avec l'alias as
+SELECT email, password AS motdepasse from customers;
+****************************************************CRUD**********************************************************************************************
+
+CRUD : désigne les quatre opérations de base pour la persistance des données, en particulier le stockage d'informations en base de données.
+CREATE :: creer
+READ :: Lire
+Update ::Modifier
+Delete ::Supprimer
+
+
+CREATION D'une base de donnée pokemon
+
+CREATE DATABASE pokemon;
+
+creation d'une table avec les champs
+CREATE TABLE mespokemon(id int(11),
+field1 varchar(100),
+fieldd2 varchar(250)) ;
+
+
+selectionne les prenoms par ordre croissant 
+SELECT first_name FROM customers ORDER BY first_name;
+
+*****************************************************TEST UNITAIRE****************************************************************
+
+
+ Les tests unitaires sont conçus pour détecter les problèmes ou les anomalies dans des parties spécifiques de votre projet, telles que les formulaires d'inscription et de connexion. En écrivant des tests unitaires pour ces fonctionnalités, vous créez une couverture automatisée qui peut identifier rapidement toute défaillance ou comportement inattendu dans ces parties cruciales de votre application.
+
+Les tests unitaires vous aident à valider que chaque unité (comme une fonction ou une méthode) fonctionne correctement dans des conditions variées, en garantissant que les entrées sont correctement traitées, que les validations sont appliquées comme prévu, et que les sorties sont conformes aux attentes. Cela améliore la fiabilité de votre code et facilite la détection précoce des erreurs lors du développement.
+
+Dans le contexte des formulaires d'inscription et de connexion, des tests unitaires pourraient vérifier des scénarios tels que la saisie d'informations valides et invalides, la gestion des erreurs, la redirection après une inscription réussie, etc. En intégrant ces tests dans votre processus de développement, vous contribuez à garantir la stabilité et la qualité de ces fonctionnalités cruciales.
+
+
+*****************************************************TEST INTEGRATION****************************************************************
+
+
+Les tests d'intégration sont une catégorie de tests logiciels qui visent à évaluer le bon fonctionnement de plusieurs composants d'un système lorsqu'ils sont combinés et interagissent les uns avec les autres. Contrairement aux tests unitaires qui se concentrent sur l'isolation d'une unité individuelle de code, les tests d'intégration examinent comment ces unités fonctionnent ensemble en tant qu'ensemble.
+
+Voici quelques points clés concernant les tests d'intégration :
+
+Portée : Les tests d'intégration ont une portée plus large que les tests unitaires. Ils évaluent la collaboration et la compatibilité entre plusieurs unités de code, modules ou services.
+
+Objectif : L'objectif principal des tests d'intégration est de s'assurer que les différentes parties du système interagissent correctement et produisent les résultats attendus lorsqu'elles sont combinées.
+
+Cas Réels d'Utilisation : Les tests d'intégration simulent souvent des cas réels d'utilisation pour garantir que l'ensemble du système fonctionne de manière cohérente dans des scénarios complets.
+
+Base de Données et Services Externes : Ils peuvent également inclure des tests impliquant des bases de données, des services externes ou d'autres composants qui ne sont pas nécessairement sous le contrôle direct de l'équipe de développement.
+
+Détection de Problèmes d'Interaction : Ces tests sont particulièrement utiles pour détecter des problèmes tels que des erreurs de communication entre composants, des problèmes de synchronisation, ou des incompatibilités entre différentes parties du système.
+
+Intégration Continue : Les tests d'intégration sont souvent inclus dans des pipelines d'intégration continue, où ils sont exécutés automatiquement à chaque modification du code source pour assurer une intégration continue réussie.
+
+En résumé, les tests d'intégration complètent les tests unitaires en vérifiant que les différentes parties d'un système fonctionnent ensemble de manière harmonieuse. Ils sont essentiels pour garantir la cohérence et la fiabilité de l'ensemble de l'application.
+
+Tests Unitaires : Ils se concentrent sur la vérification du bon fonctionnement des composants individuels de votre application, tels que des formulaires d'inscription ou de connexion. Ces tests examinent chaque unité de code de manière isolée pour s'assurer qu'elle produit les résultats attendus dans des conditions variées.
+
+Tests d'Intégration : Ils vont au-delà des tests unitaires en vérifiant la manière dont différentes parties de votre projet fonctionnent ensemble. Ces tests évaluent la collaboration et l'interaction entre plusieurs composants, modules ou services pour s'assurer que l'ensemble du système fonctionne correctement.
+
+En résumé, les tests unitaires sont axés sur les parties individuelles, tandis que les tests d'intégration s'occupent de l'ensemble, garantissant ainsi la cohérence et la performance globale de votre application. Les deux types de tests sont complémentaires et contribuent à assurer la qualité et la fiabilité du logiciel.
+
+LES DIFFERENT TYPE DE TEXT 
+
+Il existe plusieurs types de tests dans le domaine du développement logiciel. Voici quelques-uns des types de tests les plus courants :
+
+Tests Unitaires : Ils visent à vérifier le bon fonctionnement des unités individuelles de code, comme des fonctions ou des méthodes, de manière isolée. Ces tests sont écrits et exécutés par les développeurs.
+
+Tests d'Intégration : Ils évaluent la manière dont différentes parties d'un système fonctionnent ensemble. Les tests d'intégration peuvent couvrir l'intégration de modules, de services, ou même de systèmes complets.
+
+Tests de Validation : Ils s'assurent que le logiciel répond aux spécifications et aux exigences du client. Ces tests peuvent inclure des tests de fonctionnalité, des tests de performance, des tests de sécurité, etc.
+
+Tests de Système : Ils vérifient que l'ensemble du système fonctionne comme prévu. Cela peut inclure des tests de performance, de charge, de stabilité, etc.
+
+Tests de Régression : Ils s'assurent qu'une modification du code n'a pas introduit de nouveaux problèmes ou n'a pas affecté négativement les fonctionnalités existantes.
+
+Tests de Non-Régression : Ils vérifient spécifiquement qu'une nouvelle version du logiciel n'a pas introduit de régressions par rapport à la version précédente.
+
+Tests d'Acceptation : Ils sont généralement effectués par les parties prenantes (clients, utilisateurs finaux) pour vérifier que le logiciel répond à leurs besoins et exigences.
+
+Tests Fonctionnels : Ils évaluent si une fonctionnalité spécifique du logiciel fonctionne correctement. Cela peut inclure des tests de l'interface utilisateur, des scénarios d'utilisation, etc.
+
+Tests de Performance : Ils mesurent les performances du logiciel, notamment sa vitesse, sa scalabilité et sa stabilité sous différentes conditions.
+
+Tests de Charge : Ils évaluent la capacité du système à gérer une charge de travail importante, en testant ses limites en termes de nombre d'utilisateurs, de transactions, etc.
+
+Tests de Sécurité : Ils identifient et corrigent les vulnérabilités potentielles du logiciel, en s'assurant qu'il est protégé contre les attaques.
+
+Tests de Compatibilité : Ils vérifient que le logiciel fonctionne correctement sur différentes plates-formes, navigateurs, appareils, etc.
+
+Tests d'Installation : Ils s'assurent que le processus d'installation et de désinstallation du logiciel se déroule correctement.
+
+Chaque type de test a son propre objectif et son propre contexte d'application. En général, une combinaison appropriée de ces tests contribue à garantir la qualité globale d'un logiciel.
+
+
+
+DIAGRAME DE SEQUENCE 
+
+Le diagramme de séquence en UML est une représentation visuelle qui montre comment différents objets interagissent entre eux dans une séquence temporelle pour accomplir une tâche ou une fonctionnalité spécifique.
+
+Imaginez-le comme une bande dessinée qui raconte une histoire. Les "acteurs" (qui peuvent être des objets, des utilisateurs, ou d'autres parties du système) sont représentés par des boîtes, et les "messages" entre ces acteurs sont montrés par des flèches qui indiquent la séquence dans laquelle les actions se déroulent.
+
+En d'autres termes, le diagramme de séquence illustre l'ordre des étapes ou des actions qui se produisent entre les différents acteurs pendant l'exécution d'une fonctionnalité. C'est utile pour comprendre le déroulement du processus et les interactions entre les composants du système au fil du temps.
+
+
+Front Office :
+
+Traduction : "Front office" peut être traduit en français par "bureau de face" ou "bureau avant".
+Signification : Le front office représente les activités de l'entreprise qui sont en contact direct avec les clients ou le public. Cela inclut les départements et les fonctions qui traitent directement avec les clients, tels que le service client, les ventes, le marketing, et d'autres activités liées à l'interaction client.
+Back Office :
+
+Traduction : "Back office" peut être traduit en français par "bureau arrière" ou "bureau de l'arrière".
+Signification : Le back office englobe les activités de l'entreprise qui ne sont pas directement en contact avec les clients. Cela inclut les opérations internes et les tâches de support telles que la comptabilité, la gestion des ressources humaines, la gestion des stocks, et d'autres fonctions qui ne sont pas visibles par les clients.
+En résumé, le front office concerne les activités clientèle et l'interaction directe avec les clients, tandis que le back office se concentre sur les tâches internes et les opérations nécessaires pour soutenir ces interactions. Ces termes sont souvent utilisés pour décrire la structure organisationnelle d'une entreprise et ses processus opérationnels.
+
+Zoning :
+
+Définition : Le zoning (ou wireframe structurel) concerne la disposition structurelle des éléments sur une page. Il s'agit d'une représentation statique qui définit l'emplacement des différents blocs de contenu, des menus, des barres latérales, etc.
+Objectif : Le zoning vise à définir la hiérarchie visuelle et à organiser l'information de manière à créer une structure logique pour la page.
+Wireframe :
+
+Définition : Un wireframe est une représentation visuelle simple et schématique de la disposition des éléments sur une page ou d'une interface. Il est plus détaillé que le zoning et inclut souvent des indications sur les fonctionnalités et les interactions.
+Objectif : Le wireframe va au-delà du zoning en ajoutant des détails tels que la disposition précise des éléments, les zones de texte, les boutons, et parfois des annotations indiquant les fonctionnalités attendues.
+Maquette :
+
+Définition : Une maquette (ou mockup) est une représentation visuelle haute-fidélité de l'interface utilisateur. Contrairement au wireframe, la maquette inclut des éléments de design tels que les couleurs, les polices, les images et d'autres éléments visuels.
+Objectif : La maquette est destinée à donner une impression réaliste de l'apparence finale de l'interface. Elle peut être utilisée pour présenter visuellement le design aux parties prenantes et aux clients.
+En résumé, le zoning établit la structure de base, le wireframe ajoute des détails fonctionnels, tandis que la maquette offre une représentation visuelle complète et esthétique de l'interface utilisateur. Ces trois étapes sont souvent intégrées dans le processus de conception pour assurer une progression logique du concept à l'aspect final du produit.
+
+Le Dictionnaire de Données fournit des détails spécifiques sur chaque élément de données d'une base de données. Voici quelques exemples de détails que l'on peut trouver dans un Dictionnaire de Données :
+
+(dictionnaire de donnees permet de donner chaque detail d'une colonne)
+Client:
+Définition : Informations sur un individu ou une entité qui utilise les services de l'entreprise.
+Format : Texte.
+Source : Enregistrement à partir du portail client en ligne.
+Propriété : Obligatoire.
+Contraintes de Validation : Aucune.
+Relation avec d'autres éléments : Lié aux commandes via la clé étrangère "ID_Client".
+Historique des Modifications : Créé le 01/01/2022, modifié le 15/03/2022 (ajout du champ "Adresse de Livraison").
+Responsabilité : Service Clients.
+Utilisation : Stocke les détails personnels des clients pour le traitement des commandes.
+Exemples :
+Nom: "Doe"
+Prénom: "John"
+Email: "john.doe@email.com"
+Adresse: "123 Main Street, Cityville"
+Dans cet exemple, chaque champ de l'entité "Client" est détaillé avec des informations spécifiques qui aident à comprendre comment les données doivent être utilisées, stockées et gérées. Ces détails sont précieux pour toute personne travaillant avec la base de données, que ce soit pour la maintenance, le développement d'applications ou la gestion des données.
+
+
+charte graphique est l identie visuelle du site , les logo, police d ecriture 
+L'objectif principal d'une charte graphique est de garantir une identité visuelle cohérente et reconnaissable, renforçant ainsi la crédibilité et la mémorabilité de la marque ou de l'entreprise. Elle est particulièrement utile lorsque plusieurs personnes ou équipes travaillent sur des documents ou des projets différents, car elle fournit des lignes directrices claires pour maintenir une image visuelle unifiée.
+
+
+
+Modèle Physique des Données (MPD) :
+En gestion de bases de données et de systèmes d'information, le Modèle Physique des Données est une représentation visuelle de la manière dont les données sont stockées dans une base de données. Il montre la structure physique réelle des tables, des colonnes, des index, des clés étrangères, etc.
+
+
+ le diagramme de classe est un outil essentiel pour concevoir des systèmes orientés objet et offre une représentation visuelle puissante de la structure statique d'un logiciel.
 -->
